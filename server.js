@@ -106,6 +106,7 @@ app.use(
         "https://starkville.loca.lt",
         "http://localhost:10000",
         "https://starkville.co.ke",
+        'https://starkville-backend.onrender.com',
         "https://cdnjs.cloudflare.com"
       ],
 
@@ -275,3 +276,4 @@ app.use((err, req, res, next) => {
 // ---------- Start server ----------
 const PORT = process.env.PORT || 10000;
 app.listen(PORT, () => console.log(`Server listening on port ${PORT}`));
+
