@@ -1375,7 +1375,7 @@ document.addEventListener('DOMContentLoaded', function() {
             showPaymentMessage('Sending payment request . Please check your phone...', true);
 
             try {
-                const resp = await fetch('https://starkville-backend-2f2f.onrender.com', {
+                const resp = await fetch('https://starkville-backend-2f2f.onrender.com/stkpush', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ phone: formatPhone(phone), amount: Number(amount) })
@@ -1954,4 +1954,5 @@ try {
 }
 
     
+
 
