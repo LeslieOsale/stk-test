@@ -26,6 +26,7 @@ const shortCode = process.env.SHORT_CODE;
 const passkey = process.env.PASSKEY;
 const TEST_MSISDN = process.env.TEST_MSISDN || "254705809412";
 const CALLBACK_URL = process.env.CALLBACK_URL || "https://starkville.loca.lt/callback";
+;
 
 // ---------- Middleware ----------
 
@@ -106,7 +107,7 @@ app.use(
         "https://starkville.loca.lt",
         "http://localhost:10000",
         "https://starkville.co.ke",
-        'https://starkville-backend.onrender.com',
+        "https://starkville-backend-2f2f.onrender.com",
         "https://cdnjs.cloudflare.com"
       ],
 
@@ -276,4 +277,5 @@ app.use((err, req, res, next) => {
 // ---------- Start server ----------
 const PORT = process.env.PORT || 10000;
 app.listen(PORT, () => console.log(`Server listening on port ${PORT}`));
+
 
