@@ -1375,7 +1375,7 @@ document.addEventListener('DOMContentLoaded', function() {
             showPaymentMessage('Sending payment request . Please check your phone...', true);
 
             try {
-                const resp = await fetch('http://localhost:10000/stkpush', {
+                const resp = await fetch('https://starkville-backend-2f2f.onrender.com', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ phone: formatPhone(phone), amount: Number(amount) })
@@ -1429,7 +1429,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     const start = Date.now();
                     while (Date.now() - start < timeoutMs) {
                         try {
-                            const r = await fetch('http://localhost:10000/transaction-status/' + encodeURIComponent(id));
+                            const r = await fetch('https://starkville-backend-2f2f.onrender.com/transaction-status/' + encodeURIComponent(id));
                             if (r.ok) {
                                 const j = await r.json();
                                 console.log('Polled transaction-status', id, j);
@@ -1871,7 +1871,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 // --- Server-Sent Events (SSE) client to receive live updates ---
 try {
-    const sseUrl = 'https://starkville.loca.lt/events';
+    const sseUrl = 'https://starkville-backend-2f2f.onrender.com/events';
     const eventSource = new EventSource(sseUrl);
     eventSource.onmessage = function(event) {
         try {
@@ -1934,4 +1934,5 @@ try {
 } catch (err) {
     console.warn('SSE not available in this environment:', err);
 }
+
     
