@@ -1,0 +1,21 @@
+.hidden-by-csp{display:none !important}
+
+/* Status pill styles used as a fallback to inline styles blocked by CSP */
+.status-pill{display:inline-block;margin-left:8px;padding:4px 8px;border-radius:6px;font-weight:600}
+.status-pending{background:#fff5e6;color:#915800;border:1px solid #ffdca8}
+.status-success{background:#e6ffed;color:#0a6b2d;border:1px solid #8fe0a1}
+.status-failed{background:#ffe6e6;color:#a00;border:1px solid #f5a9a9}
+
+/* Confirmation dialog fallback colors for showPaymentMessage */
+.cpd-success{background:#e6ffe6 !important;color:#155834 !important}
+.cpd-fail{background:#ffe6e6 !important;color:#c00 !important}
+
+/* Check status button fallback */
+.check-status-btn{margin-top:8px;padding:8px 12px;border-radius:6px;background:#FFD700;border:none;cursor:pointer}
+
+/* Contact info fallback styles used in dialogs */
+.contact-info-fallback{margin:15px 0;padding:10px;background:#e8f5e9;border-radius:4px}
+.contact-info-fallback .ci-line{margin:5px 0}
+
+/* Dialog action container */
+.dialog-actions{margin-top:18px;display:flex;gap:8px;justify-content:center}

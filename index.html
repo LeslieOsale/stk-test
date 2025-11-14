@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starkville Adventures</title>
+    <!-- Meta Tags for Starkville Adventures -->
+<title>Starkville Adventures: Hikes, game visits, Outdoor Activities, Nature Trails, and Corporate Team Building in Kenya</title>
+<meta name="description" content="Explore Starkville Adventures in Kenya. Join us for nature trails, hiking, corporate team-building activities, and outdoor adventures perfect for families, tourists, and locals. Book your next getaway with us today!">
+<meta name="keywords" content="Kenya outdoor activities, nature trails Kenya, team building Kenya, hiking tours, camping adventures, family vacations Kenya, tourist activities Kenya, corporate team-building Kenya, Starkville Adventures">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph Tags for Social Media -->
+<meta property="og:title" content="Starkville Adventures: Explore the Best of Kenya's Outdoor Activities">
+<meta property="og:description" content="Join Starkville Adventures for hiking, team-building, and nature activities in Kenya. Perfect for tourists, locals, and corporate groups. Book now and use #StarkvilleAdventures on Instagram!">
+<meta property="og:image" content="https://res.cloudinary.com/dwpr0xrjq/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1758725534/LOGO_WHITE_BG_harwpu.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Starkville Adventures Logo on white background">
+<meta property="og:url" content="https://starkvilleadventures.co.ke">
+<meta property="og:type" content="website">
+
+<!-- Twitter Card Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Starkville Adventures: Explore the Best of Kenya's Nature Trails">
+<meta name="twitter:description" content="Book your next adventure with Starkville Adventures. Experience the best outdoor activities, hiking, and corporate team-building in Kenya.">
+<meta name="twitter:image" content="https://res.cloudinary.com/dwpr0xrjq/image/upload/v1758725534/LOGO_WHITE_BG_harwpu.png">
+
+<!-- Canonical Tag -->
+<link rel="canonical" href="https://starkvilleadventures.co.ke">
+
+<!-- Favicon -->
+<link rel="icon" href="https://res.cloudinary.com/dwpr0xrjq/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1758725534/LOGO_WHITE_BG_harwpu.png" type="image/png">
+
+    <!-- Preload Critical CSS -->
+  <link rel="preload" href="styles.css" as="style">
+  <link rel="stylesheet" href="styles.css">
+    <!-- Add Google Font for Business Name and Disco Clock -->
+    <link href="https://fonts.googleapis.com/css2?family=Recoleta&family=Tangerine:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+<style>
+    /* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #99906c; /* Earthy Tone */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Typography Styles */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Tangerine', sans-serif;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    color: #155834; /* Primary Green */
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+
+h3 {
+    font-size: 2.2rem;
+}
+
+/* General Header Styling */
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, rgb(68, 68, 68), rgb(183, 186, 183), rgb(3, 75, 31));
+    height: 15vh; /* Maintain height within 20% of viewport */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+/* Header sections */
+.header-left, .header-right {
+    display: flex;
+    align-items: center;
+}
+
+/* Logo styling */
+.header-left .logo {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto;
+    border-radius: 50%;
+    border: 3px solid #087139ea;
+    transition: width 0.3s ease, height 0.3s ease; /* Smooth resizing */
+}
+
+/* Company name styling */
+.header-left h1 {
+    font-family: 'Tangerine', sans-serif;
+    font-size: 3.5rem;
+    color: #ffffff;
+    margin: 5px 0 0; /* Add space above the name */
+    text-align: center;
+}
+
+/* Removed clock styling */
+
+/* Social icons styling */
+.header-right .social-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px; /* Space above social icons */
+}
+
+.header-right .social-icons a {
+    margin: 0 5px;
+    color: #ffffff;
+    font-size: 1.5rem; /* Default size */
+    transition: color 0.3s ease, font-size 0.3s ease; /* Smooth size adjustment */
+}
+
+.header-right .social-icons a:hover {
+    color: #8cb3a8; /* Light Green hover effect */
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+/* Book Now button */
+/* Book Now button visible only on tablets and larger screens */
+.book-now-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #FFD700, #155834);
+    color: #262c35;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 10px 22px;
+    border-radius: 30px;
+    margin-left: 12px;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(21,88,52,0.10);
+    transition: background 0.3s, color 0.3s, transform 0.2s;
+    white-space: nowrap;
+}
+
+@media screen and (max-width: 768px) {
+    .book-now-btn {
+        display: none !important;
+    }
+}
+
+.book-now-btn:hover {
+    background: linear-gradient(135deg, #155834, #FFD700);
+    color: #fff;
+    transform: scale(1.08);
+}
+
+@media screen and (max-width: 768px) {
+    .book-now-btn {
+        font-size: 0.95rem;
+        padding: 9px 16px;
+        margin-left: 0;
+        margin-top: 8px;
+        width: 100%;
+        text-align: center;
+        border-radius: 24px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .book-now-btn {
+        font-size: 0.85rem;
+        padding: 8px 8px;
+        margin-top: 10px;
+        width: 100%;
+        border-radius: 20px;
+    }
+}
+
+/* Responsive Styling for Smaller Screens */
+@media screen and (max-width: 768px) {
+    .header-container {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center;   /* Center align for better layout */
+        height: auto;          /* Adjust height to content */
+    }
+
+    /* Logo adjustments */
+    .header-left .logo {
+        width: 50px; /* Smaller logo */
+        height: 50px;
+    }
+
+    /* Company name adjustments */
+    .header-left h1 {
+        font-size: 3rem; /* Adjust font size */
+    }
+
+    /* Removed clock adjustments for smaller screens */
+
+    /* Social icons adjustments */
+    .header-right .social-icons a {
+        font-size: 1.2rem; /* Reduce size proportionately */
+    }
+}
+
+/* Further Adjustments for Extra Small Screens */
+@media screen and (max-width: 480px) {
+    .header-left {
+        display: flex;
+        flex-direction: column; /* Stack logo and name */
+        align-items: center;
+    }
+
+    .header-left .logo {
+        width: 40px; /* Resize logo */
+        height: 40px;
+    }
+
+    .header-left h1 {
+        font-size: 2.5rem; /* Further reduce font size */
+        margin: 5px 0;
+    }
+
+    /* Removed clock adjustments for extra small screens */
+
+    .header-right .social-icons {
+        margin-top: 5px; /* Adjust spacing */
+    }
+
+    .header-right .social-icons a {
+        font-size: 1rem; /* Resize icons proportionately */
+        margin: 0 3px;   /* Reduce spacing between icons */
+    }
+}
+
+/* Navbar Styling */
+.navbar {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)); /* Transparent black gradient */
+    position: sticky;
+    top: 0;
+    width: 100%; /* Full width across all screen sizes */
+    z-index: 100;
+    display: flex;
+    justify-content: center; /* Adjust for the menu icon */
+    align-items: center;
+    padding: 7px 14px; /* Adjust padding for spacing */
+    box-sizing: border-box; /* Include padding and border in width calculation */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 0px; /* Push navbar a bit lower below the header */
+}
+
+/* Navbar Links */
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Ensure navbar content spans the full width */
+    box-sizing: border-box; /* Prevent overflow */
+}
+
+.navbar li {
+    margin: 0 10px; /* Margin between links */
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.3rem; /* Adjusted font size */
+    font-weight: 500;
+    font-family: 'Recoleta', sans-serif;
+    padding: 10px 20px; /* Adjust padding for better spacing */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-sizing: border-box; /* Prevent overflow */
+}
+
+.navbar a:hover {
+    background-color: #8cb3a8; /* Light Green */
+    color: #fff;
+    border-radius: 8px;
+}
+
+/* Hamburger Menu Icon */
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 25px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.menu-icon .bar {
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 2px;
+    transition: transform 0.3s ease;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .menu-icon {
+        display: flex; /* Show the menu icon on smaller screens */
+    }
+
+    .navbar ul {
+        display: none; /* Hide the menu initially */
+        flex-direction: column;
+        gap: 10px; /* Adjusted gap for spacing */
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background: rgba(0, 0, 0, 0.9);
+        width: 100%; /* Full width across small screens */
+        padding: 14px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 100;
+        box-sizing: border-box; /* Prevent overflow */
+    }
+
+    .navbar ul.active {
+        display: flex; /* Show the menu when active */
+    }
+
+    .navbar li {
+        margin: 4px 0;
+        text-align: center;
+    }
+
+    .navbar a {
+        width: 100%; /* Make sure the links take up the full width */
+        padding: 12px 0; /* Adjust padding */
+        box-sizing: border-box; /* Prevent overflow */
+    }
+}
+
+/* Full width for all screen sizes */
+@media screen and (min-width: 320px) {
+    .navbar {
+        width: 100%; /* Ensure full width on small screens */
+    }
+}
+
+/* Hero Section */
+.hero-carousel {
+    position: relative;
+    height: 78vh;
+    background: linear-gradient(135deg, #3b9163, #8cb3a8, #0d0f0e); /* Hero section gradient */
+    overflow: hidden;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: zoomEffect 15s infinite;
+}
+
+@keyframes zoomEffect {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.hero-cta {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    padding-top: 40px;
+}
+
+.hero-cta h1 {
+    font-size: 6rem;
+    color: #ffffff; /* Accent Yellow */
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    margin: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn.primary {
+    background: linear-gradient(135deg, #055e27, #1c7847); /* Gradient for primary button */
+    color: white;
+}
+
+.btn.primary:hover {
+    background: linear-gradient(135deg, #8cb3a8, #055e27);
+    transform: scale(1.05); /* Slight grow on hover */
+}
+
+.btn.secondary {
+    background: linear-gradient(135deg, #FFD700, #c9b339); /* Accent Yellow gradient */
+    color: black;
+}
+
+.btn.secondary:hover {
+    background: linear-gradient(135deg, #d4b630, #99906c); /* Hover to earthy tone */
+    transform: scale(1.05);
+}
+
+/* Services Section */
+.services {
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #acb7b4, #158d6b); /* Background gradient for services */
+    text-align: center;
+    color: white;
+}
+
+.services-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    
+}
+
+.service-item {
+    flex: 1 1 200px;
+    background-color: rgb(5, 94, 39);
+    padding: 20px;
+    border-radius: 8px;
+    color: white;
+    max-width: 200px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    border-top: 7px solid #FFD700;
+    border-bottom: 7px solid #FFD700;
+}
+
+.service-item:hover {
+    background-color: #1c7847;
+    transform: scale(1.05); /* Lift effect on hover */
+}
+
+.service-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.service-item h3 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+/* Testimonials Section */
+.testimonials {
+    padding: 60px 20px;
+    background-image: url('https://res.cloudinary.com/dwpr0xrjq/image/upload/v1728467927/Wildlife-Wallpaper-1920x1080_u2z3za.jpg'); /* Background Image URL */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    
+}
+
+.testimonial-item {
+    background-color: #14151499;
+    padding: 20px;
+    border-radius: 15px;
+    border-right: 10px solid #FFD700;
+    border-left: 10px solid #FFD700;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    
+}
+
+.testimonial-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial-item h3 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    color: #ffffff;
+    font-weight: 100;
+}
+
+.testimonial-item p {
+    font-size: 1rem;
+    color: #ffffff;
+}
+
+.testimonial-item img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 20%;
+    border: 3px solid #0d0f0e;
+    margin-bottom: 10px;
+}
+
+
+
+/* WhatsApp Button */
+.whatsapp-button {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    animation: bounce 2s infinite;
+    z-index: 999;
+}
+
+.whatsapp-button img {
+    width: 35px;
+    height: 35px;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* ====================== */
+/* Media Queries for Mobile */
+/* ====================== */
+
+/* Tablet and smaller (screens < 768px) */
+@media only screen and (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+    }
+
+    .hero-carousel {
+        height: 60vh;
+    }
+
+    .hero-cta h1 {
+        font-size: 3rem;
+    }
+
+    .btn {
+        padding: 10px 15px;
+        font-size: 1rem;
+    }
+
+    .services-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-item {
+        max-width: 90%;
+    }
+
+    .next-event {
+        flex-direction: column;
+    }
+
+    .next-event img {
+        width: 100%;
+        height: auto;
+    }
+
+    .next-event h2 {
+        font-size: 2.8rem;
+    }
+
+    .countdown-timer {
+        font-size: 1.2rem;
+    }
+}
+
+/* Smartphone (screens < 480px) */
+@media only screen and (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .navbar {
+        padding: 10px 0;
+    }
+
+    .hero-carousel {
+        height: 50vh;
+    }
+
+    .hero-cta h1 {
+        font-size: 2rem;
+    }
+
+    .btn {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+
+    .services-grid {
+        flex-direction: column;
+    }
+
+    .next-event h2 {
+        font-size: 2rem;
+    }
+
+    .next-event p {
+        font-size: 1rem;
+    }
+}
+     /* Additional Styles for Chatbot Button and Popup */
+.chatbot-button {
+    position: fixed;
+    right: 20px;
+    bottom: 100px; /* Above WhatsApp button */
+    width: 60px;
+    height: 60px;
+    background-color: #c3a600;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    z-index: 1000;
+    animation: bounce 2s infinite; /* Bouncy animation */
+}
+
+.chatbot-button img {
+    width: 30px;
+    height: 30px;
+}
+
+/* Apply bounce animation to both buttons */
+.whatsapp-button, .chatbot-button {
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Tagline Style */
+.tagline {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 0.8rem;
+    color: #fff;
+    letter-spacing: 0.18em;
+    font-weight: 600;
+    margin-top: 2px;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    white-space: nowrap;
+}
+@media (max-width: 900px) {
+    .tagline {
+        font-size: 0.95rem;
+    }
+}
+@media (max-width: 600px) {
+    .tagline {
+        font-size: 0.75rem;
+    }
+}
+
+/* Ensure chatbot popup is visible and overlays the page when open */
+.chat-container {
+  display: none;
+  position: fixed;
+  right: 20px;
+  bottom: 100px;
+  width: 350px;
+  max-width: 95vw;
+  background: #fff;
+  border: 2px solid #c3a600;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  z-index: 1001;
+  overflow: hidden;
+}
+@media (max-width: 480px) {
+  .chat-container {
+    width: 95vw;
+    right: 2vw;
+    bottom: 80px;
+  }
+}
+</style>
+</head>
+<body>
+    <!-- Header with Logo, Business Name, Timer, and Social Media Icons -->
+    <header>
+        <div class="header-container">
+            <div class="header-left">
+                <img src="https://res.cloudinary.com/dwpr0xrjq/image/upload/v1758725534/LOGO_WHITE_BG_harwpu.png" alt="Starkville Adventures Logo" class="logo">
+                <div class="brand-text">
+                    <h1>Starkville Adventures</h1>
+                    <div class="tagline">ADVENTURE &bull; PRESTIGE &bull; DISCOVERY</div>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="social-icons">
+                    <a href="https://web.facebook.com/profile.php?id=61566137716599" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/starkvilleadventures?igsh=YzljYTk1ODg3Zg==" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@starkville.advent?_t=8qwrsPjZTGP&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    <a href="mailto:info@starkvilleadventures.co.ke"><i class="fas fa-envelope"></i></a>
+                </div>
+                <a href="events.html#booking" class="book-now-btn">Book Now</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sticky Navbar -->
+    <nav class="navbar">
+        <!-- Hamburger Menu Icon -->
+        <div class="menu-icon" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <!--navbar links-->
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="events.html">Hikes & Events</a></li>
+            <!--<li><a href="membership.html">Membership</a></li>-->
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="tnc.html">Terms and Conditions</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section with Carousel -->
+    <section class="hero-carousel">
+        <div class="carousel-container">
+            <div class="carousel-slide active">
+                <img src="https://res.cloudinary.com/dwpr0xrjq/image/upload/v1727342200/bg_wy6ant.jpg" alt="Hike Image 1">
+            </div>
+            <div class="carousel-slide">
+                <img src="https://res.cloudinary.com/dwpr0xrjq/image/upload/v1728467927/Wildlife-Wallpaper-1920x1080_u2z3za.jpg" alt="Hike Image 2">
+            </div>
+            <div class="carousel-slide">
+                <img src="https://res.cloudinary.com/dwpr0xrjq/image/upload/v1687208279/Untitled_design1_qpriow.png" alt="Hike Image 3">
+            </div>
+            <div class="carousel-nav">
+                <button class="prev">←</button>
+                <button class="next">→</button>
+            </div>
+        </div>
+        <div class="hero-cta">
+            <h1>Your Next Adventure Starts Here!</h1>
+            <a href="events.html" class="btn primary">Upcoming Events </a>
+            <a href="https://chat.whatsapp.com/J034m55UMaICsRsxAOEfUq" class="btn secondary">Join Our Group</a>
+        </div>
+    </section>
+
+    <!-- Quick Overview of Services -->
+<section class="services">
+    <h2>Our Services</h2>
+    <div class="services-grid">
+        <div class="service-item">
+            <img src="https://res.cloudinary.com/dwpr0xrjq/image/upload/v1728473467/hikes_pekpxc.jpg" alt="Hikes">
+            <h3>Guided Hikes</h3>
+            <p>Explore scenic trails with expert guides.</p>
+        </div>
+        <div class="service-item">
+            <img src="https://res.cloudinary.com/dwpr0xrjq/image/upload/v1728473467/camp_1_n18af1.jpg" alt="Camping">
+            <h3>Camping Experiences</h3>
+            <p>Spend unforgetable nights under the stars in safe, picturesque locations.</p>
+        </div>
+        <div class="service-item">
+            <img src="https://res.cloudinary.com/dwpr0xrjq/image/upload/v1728473466/safaris_sctl4a.jpg" alt="Safaris">
+            <h3>Wildlife Safaris</h3>
+            <p>Get close to nature with guided wildlife adventures.</p>
+        </div>
+        <div class="service-item">
+            <img src="https://res.cloudinary.com/dwpr0xrjq/image/upload/v1728643873/ctb_tapk0o.jpg" alt="Endless Adventures">
+            <h3>Corporate Team Building</h3>
+            
+            <p>Get to interact and bond with your colleagues outside the work setting</p>
+            <p></p>
+        </div>
+    </div>
+</section>
+
+    <!-- Featured Events Section -->
+    <section class="events-section">
+        <h2>Featured Events</h2>
+
+        <div class="events-grid">
+            <!-- Karura Forest Trek -->
+            <article class="event-card">
+                <img src="https://res.cloudinary.com/dwpr0xrjq/image/upload/v1737112775/karura_zpf8uc.jpg" alt="Karura Forest Trek">
+                <div class="event-card-content">
+                    <h3>Karura Forest Trek</h3>
+                    <div class="event-meta">
+                        <span>Date: TBA</span><br>
+                        <span>Pick-up Time: 8:00 AM</span><br>
+                        <span>Destination: Karura Forest, Nairobi</span>
+                    </div>
+                    <div class="event-btn">
+                        <button onclick="toggleDetails(this)">More Info</button>
+                    </div>
+                    <div class="event-detail">
+                        <p>Enjoy a scenic trek through Karura's trails — ideal for families, birdwatching and short nature hikes.</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Camp Nduda Funday -->
+            <article class="event-card">
+                <img src="https://res.cloudinary.com/dwpr0xrjq/image/upload/v1728473467/camp_1_n18af1.jpg" alt="Camp Nduda Funday">
+                <div class="event-card-content">
+                    <h3>Camp Nduda Funday</h3>
+                    <div class="event-meta">
+                        <span>Date: TBA</span><br>
+                        <span>Pick-up Time: 6:00 AM</span><br>
+                        <span>Destination: Camp Nduda</span>
+                    </div>
+                    <div class="event-btn">
+                        <button onclick="toggleDetails(this)">More Info</button>
+                    </div>
+                    <div class="event-detail">
+                        <p>A relaxed camp day with bonfires, games and family-friendly activities — perfect for a weekend getaway.</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Mt Longonot Hike -->
+            <article class="event-card">
+                <img src="https://res.cloudinary.com/dwpr0xrjq/image/upload/v1737112775/longonot_u3pwfq.jpg" alt="Mt Longonot Hike">
+                <div class="event-card-content">
+                    <h3>Mt Longonot Hike</h3>
+                    <div class="event-meta">
+                        <span>Date: TBA</span><br>
+                        <span>Pick-up Time: 7:00 AM</span><br>
+                        <span>Destination: Mt Longonot, Naivasha</span>
+                    </div>
+                    <div class="event-btn">
+                        <button onclick="toggleDetails(this)">More Info</button>
+                    </div>
+                    <div class="event-detail">
+                        <p>Join us for a challenging but rewarding hike around the volcanic crater rim with stunning Rift Valley views.</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Internal Team Building @ Ngong -->
+            <article class="event-card">
+                <img src="https://res.cloudinary.com/dwpr0xrjq/image/upload/v1728648268/Team-Building-Packages_jwacyr.jpg" alt="Internal Team Building at Ngong">
+                <div class="event-card-content">
+                    <h3>Internal Team Building — Ngong</h3>
+                    <div class="event-meta">
+                        <span>Date: TBA</span><br>
+                        <span>Pick-up Time: 8:30 AM</span><br>
+                        <span>Destination: Ngong Hills</span>
+                    </div>
+                    <div class="event-btn">
+                        <button onclick="toggleDetails(this)">More Info</button>
+                    </div>
+                    <div class="event-detail">
+                        <p>Programmes designed for staff bonding, leadership games and outdoor problem-solving at Ngong Hills.</p>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <div style="text-align:center; margin: 24px 0;">
+            <a href="events.html" class="btn primary">See Our Events</a>
+        </div>
+    </section>
+    
+
+
+    <!-- Testimonials & Reviews -->
+    <section class="testimonials">
+        <h2>Testimonials</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-item">
+                <img src="https://res.cloudinary.com/dwpr0xrjq/image/upload/v1728648269/hike_e.hills_rcua92.jpg" alt="Hikes">
+                <h3>Maureen W. (Nairobi, Kenya)</h3>
+                <p>"The guided hikes were breathtaking!</p>
+                <p>Our guide was incredibly knowledgeable about the local wildlife and plants. </p>
+                <p>I didn’t realize how much beauty there was just outside the city. Starkville Adventures made me fall in love with hiking all over again!"</p>
+            </div>
+            <div class="testimonial-item">
+                <img src="https://res.cloudinary.com/dwpr0xrjq/image/upload/v1728648268/Team-Building-Packages_jwacyr.jpg" alt="Camping">
+                <h3>Dan M. (Eldoret, Kenya)</h3>
+                <p>"The corporate team-building adventure was the perfect way for our company to bond. </p>
+                <p> got to push our limits, build trust, and most importantly, have fun!</p>
+                <p> Starkville's expertise made the whole trip safe and enjoyable."</p>
+            </div>
+            <div class="testimonial-item">
+                <img src="https://res.cloudinary.com/dwpr0xrjq/image/upload/v1728648269/camping_anu5jv.jpg" alt="Safaris">
+                <h3>Bellamy S. (Melbourne, Australia)</h3>
+                <p>"This was my first time in Africa, and Starkville Adventures exceeded all expectations.</p> 
+                <p> camping experience was surreal—waking up to the sunrise over the mountains was one of the most beautiful sights I’ve ever seen.</p>
+                <p>  The guides were friendly, professional, and fun!"</p>
+            </div>
+            <div class="testimonial-item">
+                <img src="https://res.cloudinary.com/dwpr0xrjq/image/upload/v1728648268/gamepark_kknduu.jpg" alt="Endless Adventures">
+                <h3>Japheth J. (London, UK)</h3>
+                <p>"I had always dreamed of visiting Africa, and Starkville Adventures made it even better than I had imagined!</p>
+                <p> The wildlife safari was a magical experience, and seeing elephants up close in their natural habitat was unforgettable.</p>
+                <p> I will definitely come back!"</p>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/+254789861332" class="whatsapp-button" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
+    <!-- Chatbot Button -->
+    <div class="chatbot-button" id="chatbotButton" aria-label="Open chat">
+        <img src="https://img.icons8.com/ios-filled/50/ffffff/speech-bubble.png" alt="Chatbot Icon">
+    </div>
+
+    <!-- Chatbot Popup -->
+    <div class="chat-container" id="chatContainer" role="dialog" aria-hidden="true">
+        <!-- Chat Header with Profile Picture and Close Button -->
+        <div class="chat-header">
+            <div class="header-info">
+                <img src="https://res.cloudinary.com/dwpr0xrjq/image/upload/v1731562166/voyaaaaa_hwt3gr.jpg" alt="Nomio Avatar">
+                <div>
+                    <h2>Nomio</h2>
+                    <div class="status">Online</div>
+                </div>
+            </div>
+            <div class="close-button" id="chatCloseButton" aria-label="Close chat">&#10005;</div>
+        </div>
+
+        <!-- Chatbox Area -->
+        <div id="chatbox" aria-live="polite"></div>
+
+        <!-- Input Section -->
+        <div class="input-section">
+            <input type="text" id="userInput" placeholder="Type your message..." autocomplete="off">
+            <button id="sendButton" aria-label="Send">&#x27A4;</button>
+        </div>
+    </div>
+    <audio id="responseTone" src="https://res.cloudinary.com/dwpr0xrjq/video/upload/v1732344373/multi-pop-2-188167_ccihzx.mp3" preload="auto"></audio>
+
+    
+
+    <!-- Footer -->
+<footer>
+    <div class="footer-container">
+        <!-- Useful Links -->
+        <div class="footer-column">
+            <h3>Useful Links</h3>
+            <ul>
+                <li><a href="itinerary.html">Itineraries</a></li>
+                <li><a href="refund.html">Refund Policy</a></li>
+                <li><a href="tnc.html">Terms and Conditions</a></li>
+                <li><a href="login.html">Membership</a></li>
+                <li><a href="faqs.html">FAQ'S</a></li>
+                <li><a href="https://chat.whatsapp.com/J034m55UMaICsRsxAOEfUq">Join our Whatsapp group</a></li>
+                
+            </ul>
+            <h4>***</h4>
+        </div>
+
+        <!-- Newsletter Subscription -->
+        <div class="footer-column newsletter">
+            <h3>Subscribe to our Newsletter</h3>
+            <form>
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="footer-column contact-info">
+            <h3>Contact Us</h3>
+            <p>Call or SMS: <a href="tel:+254789861332">0789861332</a></p>
+            <p>Location: Nairobi, Kenya</p>
+            <div class="social-icons">
+                <a href="https://web.facebook.com/profile.php?id=61566137716599" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/starkvilleadventures?igsh=YzljYTk1ODg3Zg==" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@starkville.advent?_t=8qwrsPjZTGP&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
+                <a href="mailto:info@starkvilleadventures.co.ke"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Copyright Information -->
+    <div class="footer-bottom">
+        <p>&copy; 2025 Starkville Industries. rights reserved</p>
+    </div>
+</footer>
+
+
+    <script>
+        // Navigation/menu code (unchanged)
+        function toggleMenu() {
+            const navLinks = document.querySelector('.navbar ul');
+            if (navLinks) navLinks.classList.toggle('active');
+        }
+
+        // Carousel functionality for Hero Section (unchanged behaviour)
+        (function initCarousel(){
+            const slides = document.querySelectorAll('.carousel-slide');
+            const next = document.querySelector('.next');
+            const prev = document.querySelector('.prev');
+            let currentSlide = 0;
+            if (!slides || slides.length === 0) return;
+
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    slide.classList.toggle('active', i === index);
+                });
+            }
+
+            if (next) next.addEventListener('click', () => { currentSlide = (currentSlide + 1) % slides.length; showSlide(currentSlide); });
+            if (prev) prev.addEventListener('click', () => { currentSlide = (currentSlide - 1 + slides.length) % slides.length; showSlide(currentSlide); });
+            setInterval(() => { currentSlide = (currentSlide + 1) % slides.length; showSlide(currentSlide); }, 7000);
+        })();
+
+        // Testimonials carousel safe init
+        (function initTestimonials(){
+            const testimonialSlides = document.querySelectorAll('.testimonial-item');
+            if (!testimonialSlides || testimonialSlides.length === 0) return;
+            let currentTestimonial = 0;
+            function showTestimonial(index) {
+                testimonialSlides.forEach((t,i)=> t.style.display = (i===index)?'block':'none');
+            }
+            showTestimonial(0);
+            setInterval(()=>{ currentTestimonial=(currentTestimonial+1)%testimonialSlides.length; showTestimonial(currentTestimonial); },7000);
+        })();
+
+        // --- Consolidated Chat Implementation ---
+        (function chatInit(){
+            const knownResponses = {
+                'hi': "Hello! 👋 How can I help you today?",
+                'hello': "Hi there! 👋 How can I assist you?",
+                'booking': "To book an event, please visit our events page or click the 'Book Now' button. You can also contact us directly at 0789861332. 📅",
+                'price': "Our prices vary depending on the event. You can find detailed pricing information on our events page. All prices include transport and guide fees. 💰",
+                'contact': "You can reach us at 0789861332 or email us at info@starkvilleadventures.co.ke 📞",
+                'location': "We're based in Nairobi, Kenya. Our pick-up points vary depending on the event. 📍",
+                'upcoming events': "Check out our events page for all upcoming adventures! We have exciting hikes and camping trips planned. 🎉",
+                'payment': "We accept M-Pesa, bank transfers, and cash payments. Payment details will be provided upon booking. 💳",
+                'refund': "Please check our refund policy page for detailed information about our cancellation and refund terms. 💱"
+            };
+
+            const chatContainer = document.getElementById('chatContainer');
+            const chatbotButton = document.getElementById('chatbotButton');
+            const chatCloseButton = document.getElementById('chatCloseButton');
+            const sendButton = document.getElementById('sendButton');
+            const userInput = document.getElementById('userInput');
+            const chatbox = document.getElementById('chatbox');
+            const responseTone = document.getElementById('responseTone');
+
+            if (!chatContainer || !chatbotButton || !chatbox) {
+                console.warn('Chat elements missing; chat will not initialize fully');
+                return;
+            }
+
+            // Ensure hidden on load
+            chatContainer.style.display = 'none';
+            chatContainer.setAttribute('aria-hidden','true');
+
+            // initial bot message
+            addMessage("Hi! 👋 I'm Nomio, your adventure assistant. How can I help you today?", 'bot');
+            console.log('Chat initialization complete');
+
+            // Toggle chat - single responsibility
+            function openChat(){
+                if (chatContainer.style.display === 'flex') return;
+                chatContainer.style.display = 'flex';
+                chatContainer.setAttribute('aria-hidden','false');
+                chatContainer.classList.add('open-animation');
+                setTimeout(()=> chatContainer.classList.remove('open-animation'),400);
+                if (userInput) setTimeout(()=> userInput.focus(),120);
+                console.log('Chat opened');
+                scrollToBottom();
+            }
+
+            function closeChat(){
+                if (chatContainer.style.display === 'none') return;
+                chatContainer.style.display = 'none';
+                chatContainer.setAttribute('aria-hidden','true');
+                console.log('Chat closed');
+            }
+
+            chatbotButton.addEventListener('click', (e)=>{ e.stopPropagation(); openChat(); });
+            chatCloseButton && chatCloseButton.addEventListener('click',(e)=>{ e.stopPropagation(); closeChat(); });
+
+            // Clicking inside chat shouldn't close it
+            chatContainer.addEventListener('click', (e)=> e.stopPropagation());
+
+            // Click outside closes chat
+            document.addEventListener('click', ()=> { if (chatContainer.style.display === 'flex') closeChat(); });
+
+            // Send message on Enter or send button
+            userInput && userInput.addEventListener('keydown', function(e){ if (e.key === 'Enter'){ e.preventDefault(); handleSend(); } });
+            sendButton && sendButton.addEventListener('click', function(e){ e.preventDefault(); handleSend(); });
+
+            function handleSend(){
+                const val = userInput ? userInput.value.trim() : '';
+                if (!val) return;
+                addMessage(val,'user');
+                if (userInput) userInput.value = '';
+                if (responseTone) { try { responseTone.play(); } catch(err) { /* ignore play errors */ } }
+                processMessage(val.toLowerCase());
+            }
+
+            // Process message: known responses or unknown
+            function processMessage(message){
+                // Add loading
+                const loading = addLoadingIndicator();
+
+                // find known response
+                let found = null;
+                for (const k in knownResponses){ if (message.includes(k)){ found = knownResponses[k]; break; } }
+
+                // simulate processing
+                setTimeout(()=>{
+                    removeLoadingIndicator(loading);
+                    if (found){ addMessage(found,'bot'); console.log('Success: Known response for', message); }
+                    else { addMessage("I'm not sure about that. I'll log this so the team can follow up.", 'bot'); console.error('Unknown query:', message); }
+                }, 800);
+            }
+
+            // Add message element
+            function addMessage(text, sender){
+                if (!chatbox) return;
+                const el = document.createElement('div');
+                el.className = 'message ' + (sender === 'user' ? 'user-message' : 'bot-message');
+                el.textContent = text;
+                chatbox.appendChild(el);
+                scrollToBottom();
+                return el;
+            }
+
+            // Loading indicator
+            function addLoadingIndicator(){
+                if (!chatbox) return null;
+                const el = document.createElement('div');
+                el.className = 'message bot-message loading';
+                el.innerHTML = '<div class="typing-indicator"><span></span><span></span><span></span></div>';
+                chatbox.appendChild(el);
+                scrollToBottom();
+                return el;
+            }
+            function removeLoadingIndicator(el){
+                if (el && el.parentNode) el.parentNode.removeChild(el);
+                else {
+                    const old = chatbox.querySelector('.loading'); if (old) old.remove();
+                }
+            }
+
+            function scrollToBottom(){ if (chatbox) chatbox.scrollTop = chatbox.scrollHeight; }
+
+            // Add minimal typing indicator styles (if not already present)
+            const typingStyle = document.createElement('style');
+            typingStyle.textContent = `
+                .typing-indicator{display:flex;gap:6px;padding:6px}
+                .typing-indicator span{width:8px;height:8px;background:#90a4ae;border-radius:50%;animation:chatBounce 1s infinite}
+                .typing-indicator span:nth-child(2){animation-delay:0.15s}
+                .typing-indicator span:nth-child(3){animation-delay:0.3s}
+                @keyframes chatBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+            `;
+            document.head.appendChild(typingStyle);
+        })();
+    </script>
+
+</body>
+</html>

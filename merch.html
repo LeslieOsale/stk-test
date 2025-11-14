@@ -1,0 +1,1521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merchandise | Starkville Adventures</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --jungle-green: #2D5A27;
+            --sunset-yellow: #F4B400;
+            --charcoal-black: #1A1A1A;
+            --pure-white: #FFFFFF;
+            --light-gray: #f5f5f5;
+            --medium-gray: #e0e0e0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.4;
+            color: var(--charcoal-black);
+            background-color: var(--pure-white);
+            font-size: 0.9rem;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Tangerine', cursive;
+            font-weight: 700;
+        }
+        
+        .container {
+            width: 95%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: var(--pure-white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 40px;
+            margin-right: 8px;
+        }
+        
+        .logo-text {
+            font-family: 'Tangerine', cursive;
+            font-size: 24px;
+            color: var(--jungle-green);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--charcoal-black);
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover, nav ul li a.active {
+            color: var(--jungle-green);
+        }
+        
+        .cart-icon {
+            position: relative;
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--sunset-yellow);
+            color: var(--charcoal-black);
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            font-size: 0.7rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+        
+        .cta-button {
+            background-color: var(--sunset-yellow);
+            color: var(--charcoal-black);
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+        
+        .cta-button:hover {
+            background-color: var(--jungle-green);
+            color: var(--pure-white);
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(rgba(45, 90, 39, 0.8), rgba(45, 90, 39, 0.6)), url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 120px 0 60px;
+            text-align: center;
+            color: var(--pure-white);
+            margin-top: 64px;
+        }
+        
+        .page-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .page-header p {
+            font-size: 1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Quick Category Navigation */
+        .quick-categories {
+            background-color: var(--light-gray);
+            padding: 15px 0;
+            position: sticky;
+            top: 64px;
+            z-index: 999;
+        }
+        
+        .category-scroll {
+            display: flex;
+            overflow-x: auto;
+            gap: 10px;
+            padding: 5px 0;
+            scrollbar-width: none;
+        }
+        
+        .category-scroll::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .category-chip {
+            background-color: var(--pure-white);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 500;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            white-space: nowrap;
+            border: 1px solid var(--medium-gray);
+        }
+        
+        .category-chip.active {
+            background-color: var(--jungle-green);
+            color: var(--pure-white);
+            border-color: var(--jungle-green);
+        }
+        
+        .category-chip:hover:not(.active) {
+            border-color: var(--jungle-green);
+        }
+        
+        /* Merchandise Section */
+        .merchandise {
+            padding: 40px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.8rem;
+            color: var(--jungle-green);
+            margin-bottom: 8px;
+            padding-top: 20px;
+        }
+        
+        .section-title p {
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 0.9rem;
+        }
+        
+        .merch-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .product-card {
+            background-color: var(--pure-white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: var(--sunset-yellow);
+            color: var(--charcoal-black);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            z-index: 2;
+        }
+        
+        .product-image {
+            height: 160px;
+            background-color: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+        
+        .product-content {
+            padding: 12px;
+        }
+        
+        .product-content h3 {
+            font-size: 1.3rem;
+            color: var(--jungle-green);
+            margin-bottom: 6px;
+            line-height: 1.2;
+        }
+        
+        .product-rating {
+            color: var(--sunset-yellow);
+            margin-bottom: 6px;
+            font-size: 0.8rem;
+        }
+        
+        .product-description {
+            color: #666;
+            margin-bottom: 10px;
+            font-size: 0.8rem;
+            line-height: 1.3;
+            height: 32px;
+            overflow: hidden;
+        }
+        
+        .product-price {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        
+        .current-price {
+            color: var(--jungle-green);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+        
+        .original-price {
+            color: #999;
+            text-decoration: line-through;
+            font-size: 0.8rem;
+        }
+        
+        .add-to-cart {
+            background-color: var(--jungle-green);
+            color: var(--pure-white);
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            font-size: 0.85rem;
+        }
+        
+        .add-to-cart:hover {
+            background-color: var(--sunset-yellow);
+            color: var(--charcoal-black);
+        }
+        
+        /* Quick View Modal */
+        .quick-view-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            z-index: 1100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+        
+        .quick-view-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .modal-content {
+            background-color: var(--pure-white);
+            border-radius: 10px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            padding: 20px;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #666;
+        }
+        
+        /* Shopping Cart Sidebar */
+        .cart-sidebar {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 380px;
+            height: 100vh;
+            background-color: var(--pure-white);
+            box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+            z-index: 1001;
+            transition: right 0.4s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .cart-sidebar.active {
+            right: 0;
+        }
+        
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid var(--medium-gray);
+        }
+        
+        .cart-header h3 {
+            font-size: 1.8rem;
+            color: var(--jungle-green);
+            margin: 0;
+        }
+        
+        .close-cart {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #666;
+        }
+        
+        .cart-items {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+        }
+        
+        .cart-item {
+            display: flex;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--medium-gray);
+        }
+        
+        .cart-item-image {
+            width: 60px;
+            height: 60px;
+            background-color: #eee;
+            border-radius: 5px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        
+        .cart-item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .cart-item-details {
+            flex: 1;
+        }
+        
+        .cart-item-details h4 {
+            font-size: 0.9rem;
+            margin-bottom: 4px;
+            color: var(--jungle-green);
+        }
+        
+        .cart-item-price {
+            color: var(--jungle-green);
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+        
+        .cart-item-quantity {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .quantity-btn {
+            background: none;
+            border: 1px solid var(--medium-gray);
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
+        
+        .remove-item {
+            color: #ff4d4d;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 0.8rem;
+            margin-top: 4px;
+        }
+        
+        .cart-footer {
+            padding: 15px;
+            border-top: 1px solid var(--medium-gray);
+        }
+        
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+        
+        .checkout-btn {
+            background-color: var(--jungle-green);
+            color: var(--pure-white);
+            border: none;
+            padding: 12px;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+        
+        .checkout-btn:hover {
+            background-color: var(--sunset-yellow);
+            color: var(--charcoal-black);
+        }
+        
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 1000;
+            display: none;
+        }
+        
+        .overlay.active {
+            display: block;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(rgba(45, 90, 39, 0.9), rgba(45, 90, 39, 0.8)), url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 60px 0;
+            text-align: center;
+            color: var(--pure-white);
+        }
+        
+        .cta-section h2 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+        }
+        
+        .cta-section p {
+            font-size: 1rem;
+            max-width: 600px;
+            margin: 0 auto 20px;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+        
+        .btn-primary {
+            background-color: var(--sunset-yellow);
+            color: var(--charcoal-black);
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--pure-white);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            color: var(--pure-white);
+            border: 2px solid var(--pure-white);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--pure-white);
+            color: var(--jungle-green);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--charcoal-black);
+            color: var(--pure-white);
+            padding: 40px 0 15px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 25px;
+            margin-bottom: 25px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.5rem;
+            color: var(--sunset-yellow);
+            margin-bottom: 15px;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 8px;
+        }
+        
+        .footer-column ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 0.85rem;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--sunset-yellow);
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 12px;
+            margin-top: 15px;
+        }
+        
+        .social-icons a {
+            color: var(--pure-white);
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+        
+        .social-icons a:hover {
+            color: var(--sunset-yellow);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 15px;
+            border-top: 1px solid #444;
+            color: #999;
+            font-size: 0.8rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                padding: 10px 0;
+            }
+            
+            .logo {
+                margin-bottom: 10px;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul li {
+                margin: 8px 0;
+            }
+            
+            .mobile-menu {
+                display: block;
+                position: absolute;
+                top: 15px;
+                right: 15px;
+            }
+            
+            .page-header {
+                padding: 100px 0 40px;
+                margin-top: 80px;
+            }
+            
+            .page-header h1 {
+                font-size: 2.8rem;
+            }
+            
+            .quick-categories {
+                top: 80px;
+            }
+            
+            .merch-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 15px;
+            }
+            
+            .product-image {
+                height: 140px;
+            }
+            
+            .cart-sidebar {
+                width: 100%;
+                right: -100%;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .merch-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .product-image {
+                height: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="https://res.cloudinary.com/dwpr0xrjq/image/upload/v1758725534/LOGO_WHITE_BG_harwpu.png" alt="Starkville Adventures Logo">
+                <div class="logo-text">Starkville Adventures</div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="tours.html">Tours</a></li>
+                    <li><a href="merchandise.html" class="active">Merchandise</a></li>
+                    <li><a href="calendar.html">Events Calendar</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li class="cart-icon">
+                        <a href="#" id="cart-toggle">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="mobile-menu">☰</div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    
+
+    <!-- Quick Category Navigation -->
+    <section class="quick-categories">
+        <div class="container">
+            <div class="category-scroll">
+                <div class="category-chip active" data-category="all">All Products</div>
+                <div class="category-chip" data-category="brand">Our Brand</div>
+                <div class="category-chip" data-category="tshirts">T-Shirts</div>
+                <div class="category-chip" data-category="caps">Caps & Hats</div>
+                <div class="category-chip" data-category="boots">Boots</div>
+                <div class="category-chip" data-category="rainwear">Rainwear</div>
+                <div class="category-chip" data-category="hiking-sticks">Hiking Sticks</div>
+                <div class="category-chip" data-category="backpacks">Backpacks</div>
+                
+                <div class="category-chip" data-category="shukas">Shukas</div>
+                <div class="category-chip" data-category="water-bottles">Water Bottles</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Merchandise Section -->
+    <section class="merchandise">
+        <div class="container">
+            <div class="section-title">
+                <h2>Adventure Gear</h2>
+                <p>Everything you need for your safari experience</p>
+            </div>
+            
+            <div class="merch-grid">
+                <!-- our brand -->
+                <!-- 1️⃣ Branded T-Shirts -->
+<div class="product-card" data-category="brand">
+    <div class="product-image">
+        <img src="https://res.cloudinary.com/dwpr0xrjq/image/upload/v1746016613/white_gkynpf.jpg" alt="Branded T-Shirts">
+    </div>
+    <div class="product-content">
+        <h3>Branded T-Shirts</h3>
+        <div class="product-rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+        </div>
+        <p class="product-description">Adventure-themed tees — “Explore Kenya”, “Adventure Awaits”.</p>
+        <div class="product-price"><span class="current-price">KSH 2,000</span></div>
+        <button class="add-to-cart" data-id="21" data-name="Branded T-Shirts" data-price="2000" data-image="https://images.unsplash.com/photo-1602810318383-e386cc2a3d3b?auto=format&fit=crop&w=500&q=80">
+            <i class="fas fa-shopping-cart"></i> Add to Cart
+        </button>
+    </div>
+</div>
+
+<!-- 2️⃣ Hoodies and Sweatshirts -->
+<div class="product-card" data-category="brand">
+    <div class="product-image">
+        <img src="https://images.unsplash.com/photo-1604177091074-7d5507cbb29d?auto=format&fit=crop&w=500&q=80" alt="Hoodies and Sweatshirts">
+    </div>
+    <div class="product-content">
+        <h3>Hoodies & Sweatshirts</h3>
+        <div class="product-rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i>
+        </div>
+        <p class="product-description">Cozy, scenic prints perfect for chilly adventures and campfire nights.</p>
+        <div class="product-price"><span class="current-price">KSH 3,500</span></div>
+        <button class="add-to-cart" data-id="22" data-name="Hoodies & Sweatshirts" data-price="3500" data-image="https://images.unsplash.com/photo-1604177091074-7d5507cbb29d?auto=format&fit=crop&w=500&q=80">
+            <i class="fas fa-shopping-cart"></i> Add to Cart
+        </button>
+    </div>
+</div>
+
+<!-- 3️⃣ Caps & Bucket Hats -->
+<div class="product-card" data-category="brand">
+    <div class="product-image">
+        <img src="https://images.unsplash.com/photo-1592878898360-9b83b0da6a51?auto=format&fit=crop&w=500&q=80" alt="Caps and Bucket Hats">
+    </div>
+    <div class="product-content">
+        <h3>Caps & Bucket Hats</h3>
+        <div class="product-rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+        </div>
+        <p class="product-description">Protect yourself in style — featuring the Starkville Adventures logo.</p>
+        <div class="product-price"><span class="current-price">KSH 1,800</span></div>
+        <button class="add-to-cart" data-id="23" data-name="Caps & Bucket Hats" data-price="1800" data-image="https://images.unsplash.com/photo-1592878898360-9b83b0da6a51?auto=format&fit=crop&w=500&q=80">
+            <i class="fas fa-shopping-cart"></i> Add to Cart
+        </button>
+    </div>
+</div>
+
+<!-- 4️⃣ Windbreakers / Jackets -->
+<div class="product-card" data-category="brand">
+    <div class="product-image">
+        <img src="https://images.unsplash.com/photo-1598970434795-0c54fe7c0643?auto=format&fit=crop&w=500&q=80" alt="Windbreakers and Jackets">
+    </div>
+    <div class="product-content">
+        <h3>Windbreakers / Jackets</h3>
+        <div class="product-rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i>
+        </div>
+        <p class="product-description">Lightweight, weather-ready, and branded with a minimalist adventure logo.</p>
+        <div class="product-price"><span class="current-price">KSH 4,800</span></div>
+        <button class="add-to-cart" data-id="24" data-name="Windbreakers / Jackets" data-price="4800" data-image="https://images.unsplash.com/photo-1598970434795-0c54fe7c0643?auto=format&fit=crop&w=500&q=80">
+            <i class="fas fa-shopping-cart"></i> Add to Cart
+        </button>
+    </div>
+</div>
+
+<!-- 5️⃣ Bandanas / Neck Gaiters -->
+<div class="product-card" data-category="brand">
+    <div class="product-image">
+        <img src="https://images.unsplash.com/photo-1610465299996-9e8fba9c6b2d?auto=format&fit=crop&w=500&q=80" alt="Bandanas and Neck Gaiters">
+    </div>
+    <div class="product-content">
+        <h3>Bandanas / Neck Gaiters</h3>
+        <div class="product-rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+        </div>
+        <p class="product-description">Perfect for hikes and safaris — breathable and adventure-ready.</p>
+        <div class="product-price"><span class="current-price">KSH 1,200</span></div>
+        <button class="add-to-cart" data-id="25" data-name="Bandanas / Neck Gaiters" data-price="1200" data-image="https://images.unsplash.com/photo-1610465299996-9e8fba9c6b2d?auto=format&fit=crop&w=500&q=80">
+            <i class="fas fa-shopping-cart"></i> Add to Cart
+        </button>
+    </div>
+</div>
+
+                <!-- T-Shirts -->
+                <div class="product-card" data-category="tshirts">
+                    <div class="product-badge">Bestseller</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Safari T-Shirt">
+                    </div>
+                    <div class="product-content">
+                        <h3>Safari T-Shirt</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="product-description">Comfortable cotton tee with safari print</p>
+                        <div class="product-price">
+                            <span class="current-price">KSH 1,800</span>
+                        </div>
+                        <button class="add-to-cart" data-id="1" data-name="Safari T-Shirt" data-price="1800" data-image="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-category="tshirts">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Wildlife T-Shirt">
+                    </div>
+                    <div class="product-content">
+                        <h3>Wildlife T-Shirt</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <p class="product-description">Elephant design, 100% cotton</p>
+                        <div class="product-price">
+                            <span class="current-price">KSH 1,600</span>
+                        </div>
+                        <button class="add-to-cart" data-id="2" data-name="Wildlife T-Shirt" data-price="1600" data-image="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Caps & Hats -->
+                <div class="product-card" data-category="caps">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Safari Hat">
+                    </div>
+                    <div class="product-content">
+                        <h3>Safari Explorer Hat</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="product-description">Wide-brimmed sun protection</p>
+                        <div class="product-price">
+                            <span class="current-price">KSH 2,500</span>
+                        </div>
+                        <button class="add-to-cart" data-id="3" data-name="Safari Explorer Hat" data-price="2500" data-image="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-category="caps">
+                    <div class="product-badge">New</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Safari Cap">
+                    </div>
+                    <div class="product-content">
+                        <h3>Adventure Cap</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <p class="product-description">Adjustable safari cap with logo</p>
+                        <div class="product-price">
+                            <span class="current-price">KSH 1,200</span>
+                        </div>
+                        <button class="add-to-cart" data-id="4" data-name="Adventure Cap" data-price="1200" data-image="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Boots -->
+                <div class="product-card" data-category="boots">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1542280756-74b2f55e73ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Hiking Boots">
+                    </div>
+                    <div class="product-content">
+                        <h3>Trail Hiking Boots</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="product-description">Waterproof hiking boots</p>
+                        <div class="product-price">
+                            <span class="current-price">KSH 6,500</span>
+                        </div>
+                        <button class="add-to-cart" data-id="5" data-name="Trail Hiking Boots" data-price="6500" data-image="https://images.unsplash.com/photo-1542280756-74b2f55e73ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-category="boots">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1605812860427-4024433a70fd?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Safari Boots">
+                    </div>
+                    <div class="product-content">
+                        <h3>Safari Desert Boots</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <p class="product-description">Lightweight desert boots</p>
+                        <div class="product-price">
+                            <span class="current-price">KSH 5,200</span>
+                        </div>
+                        <button class="add-to-cart" data-id="6" data-name="Safari Desert Boots" data-price="5200" data-image="https://images.unsplash.com/photo-1605812860427-4024433a70fd?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Rainwear -->
+                <div class="product-card" data-category="rainwear">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Rain Jacket">
+                    </div>
+                    <div class="product-content">
+                        <h3>Safari Rain Jacket</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="product-description">Waterproof, lightweight jacket</p>
+                        <div class="product-price">
+                            <span class="current-price">KSH 4,200</span>
+                        </div>
+                        <button class="add-to-cart" data-id="7" data-name="Safari Rain Jacket" data-price="4200" data-image="https://images.unsplash.com/photo-1556821840-3a63f95609a7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-category="rainwear">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Rain Pants">
+                    </div>
+                    <div class="product-content">
+                        <h3>Waterproof Pants</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <p class="product-description">Quick-dry waterproof pants</p>
+                        <div class="product-price">
+                            <span class="current-price">KSH 2,800</span>
+                            <span class="original-price">KSH 3,200</span>
+                        </div>
+                        <button class="add-to-cart" data-id="8" data-name="Waterproof Pants" data-price="2800" data-image="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Hiking Sticks -->
+                <div class="product-card" data-category="hiking-sticks">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Hiking Stick">
+                    </div>
+                    <div class="product-content">
+                        <h3>Trekking Pole</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <p class="product-description">Adjustable aluminum trekking pole</p>
+                        <div class="product-price">
+                            <span class="current-price">KSH 1,800</span>
+                        </div>
+                        <button class="add-to-cart" data-id="9" data-name="Trekking Pole" data-price="1800" data-image="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Backpacks -->
+                <div class="product-card" data-category="backpacks">
+                    <div class="product-badge">Sale</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Daypack">
+                    </div>
+                    <div class="product-content">
+                        <h3>Safari Daypack</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="product-description">20L daypack with hydration pocket</p>
+                        <div class="product-price">
+                            <span class="current-price">KSH 3,500</span>
+                            <span class="original-price">KSH 4,200</span>
+                        </div>
+                        <button class="add-to-cart" data-id="10" data-name="Safari Daypack" data-price="3500" data-image="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                
+                
+                <!-- Shukas -->
+                <div class="product-card" data-category="shukas">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1584670747417-594a9412fba5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Maasai Shuka">
+                    </div>
+                    <div class="product-content">
+                        <h3>Maasai Shuka</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="product-description">Authentic Maasai patterned blanket</p>
+                        <div class="product-price">
+                            <span class="current-price">KSH 2,200</span>
+                        </div>
+                        <button class="add-to-cart" data-id="12" data-name="Maasai Shuka" data-price="2200" data-image="https://images.unsplash.com/photo-1584670747417-594a9412fba5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Water Bottles -->
+                <div class="product-card" data-category="water-bottles">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1547949003-9792a18a2601?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Water Bottle">
+                    </div>
+                    <div class="product-content">
+                        <h3>Insulated Water Bottle</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="product-description">1L stainless steel, keeps cold 24hrs</p>
+                        <div class="product-price">
+                            <span class="current-price">KSH 1,500</span>
+                        </div>
+                        <button class="add-to-cart" data-id="13" data-name="Insulated Water Bottle" data-price="1500" data-image="https://images.unsplash.com/photo-1547949003-9792a18a2601?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Additional products to fill out the categories -->
+                <div class="product-card" data-category="rainwear">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Rain Poncho">
+                    </div>
+                    <div class="product-content">
+                        <h3>Emergency Poncho</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <p class="product-description">Compact emergency rain poncho</p>
+                        <div class="product-price">
+                            <span class="current-price">KSH 600</span>
+                        </div>
+                        <button class="add-to-cart" data-id="14" data-name="Emergency Poncho" data-price="600" data-image="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-category="backpacks">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1577733966973-d680bffd2e80?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Hiking Backpack">
+                    </div>
+                    <div class="product-content">
+                        <h3>35L Hiking Pack</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="product-description">Multi-day hiking backpack</p>
+                        <div class="product-price">
+                            <span class="current-price">KSH 5,800</span>
+                        </div>
+                        <button class="add-to-cart" data-id="15" data-name="35L Hiking Pack" data-price="5800" data-image="https://images.unsplash.com/photo-1577733966973-d680bffd2e80?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-category="binoculars">
+                    <div class="product-badge">New</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1572635148811-76c2d1c12b56?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Compact Binoculars">
+                    </div>
+                    <div class="product-content">
+                        <h3>Compact Binoculars</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <p class="product-description">Pocket-sized 8x25 binoculars</p>
+                        <div class="product-price">
+                            <span class="current-price">KSH 4,200</span>
+                        </div>
+                        <button class="add-to-cart" data-id="16" data-name="Compact Binoculars" data-price="4200" data-image="https://images.unsplash.com/photo-1572635148811-76c2d1c12b56?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready for Your Adventure?</h2>
+            <p>Get equipped with our premium safari gear and apparel</p>
+            <div class="cta-buttons">
+                <a href="tours.html" class="btn btn-primary">Explore Tours</a>
+                <a href="contact.html" class="btn btn-outline">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-cart"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items">
+            <!-- Cart items will be dynamically added here -->
+            <div class="empty-cart-message" style="text-align: center; padding: 40px 20px; color: #666;">
+                <i class="fas fa-shopping-cart" style="font-size: 2.5rem; margin-bottom: 15px; opacity: 0.5;"></i>
+                <p>Your cart is empty</p>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span class="total-amount">KSH 0</span>
+            </div>
+            <button class="checkout-btn">Proceed to Checkout</button>
+        </div>
+    </div>
+    
+    <div class="overlay"></div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Starkville Adventures</h3>
+                    <p>Creating unforgettable Kenyan safari experiences since 2010.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="tours.html">Tours</a></li>
+                        <li><a href="merchandise.html">Merchandise</a></li>
+                        <li><a href="calendar.html">Events Calendar</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="#">Shipping Information</a></li>
+                        <li><a href="#">Returns & Exchanges</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Contact Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <p>Nairobi, Kenya</p>
+                    <p>+254 700 123 456</p>
+                    <p>info@starkvilleadventures.co.ke</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Starkville Adventures. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Shopping Cart Functionality
+        const cart = [];
+        const cartToggle = document.getElementById('cart-toggle');
+        const cartSidebar = document.querySelector('.cart-sidebar');
+        const overlay = document.querySelector('.overlay');
+        const closeCart = document.querySelector('.close-cart');
+        const cartCount = document.querySelector('.cart-count');
+        const cartItems = document.querySelector('.cart-items');
+        const totalAmount = document.querySelector('.total-amount');
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        const checkoutBtn = document.querySelector('.checkout-btn');
+        
+        // Toggle Cart
+        cartToggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            cartSidebar.classList.add('active');
+            overlay.classList.add('active');
+        });
+        
+        closeCart.addEventListener('click', () => {
+            cartSidebar.classList.remove('active');
+            overlay.classList.remove('active');
+        });
+        
+        overlay.addEventListener('click', () => {
+            cartSidebar.classList.remove('active');
+            overlay.classList.remove('active');
+        });
+        
+        // Add to Cart
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const id = button.getAttribute('data-id');
+                const name = button.getAttribute('data-name');
+                const price = parseInt(button.getAttribute('data-price'));
+                const image = button.getAttribute('data-image');
+                
+                // Check if item already in cart
+                const existingItem = cart.find(item => item.id === id);
+                
+                if (existingItem) {
+                    existingItem.quantity += 1;
+                } else {
+                    cart.push({
+                        id,
+                        name,
+                        price,
+                        image,
+                        quantity: 1
+                    });
+                }
+                
+                updateCart();
+                
+                // Show confirmation
+                button.innerHTML = '<i class="fas fa-check"></i> Added!';
+                setTimeout(() => {
+                    button.innerHTML = '<i class="fas fa-shopping-cart"></i> Add to Cart';
+                }, 1500);
+            });
+        });
+        
+        // Update Cart
+        function updateCart() {
+            // Update cart count
+            const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+            cartCount.textContent = totalItems;
+            
+            // Update cart items
+            if (cart.length === 0) {
+                cartItems.innerHTML = `
+                    <div class="empty-cart-message" style="text-align: center; padding: 40px 20px; color: #666;">
+                        <i class="fas fa-shopping-cart" style="font-size: 2.5rem; margin-bottom: 15px; opacity: 0.5;"></i>
+                        <p>Your cart is empty</p>
+                    </div>
+                `;
+            } else {
+                cartItems.innerHTML = '';
+                cart.forEach(item => {
+                    const cartItem = document.createElement('div');
+                    cartItem.className = 'cart-item';
+                    cartItem.innerHTML = `
+                        <div class="cart-item-image">
+                            <img src="${item.image}" alt="${item.name}">
+                        </div>
+                        <div class="cart-item-details">
+                            <h4>${item.name}</h4>
+                            <div class="cart-item-price">KSH ${item.price}</div>
+                            <div class="cart-item-quantity">
+                                <button class="quantity-btn minus" data-id="${item.id}">-</button>
+                                <span>${item.quantity}</span>
+                                <button class="quantity-btn plus" data-id="${item.id}">+</button>
+                            </div>
+                            <button class="remove-item" data-id="${item.id}">Remove</button>
+                        </div>
+                    `;
+                    cartItems.appendChild(cartItem);
+                });
+                
+                // Add event listeners to quantity buttons
+                document.querySelectorAll('.quantity-btn.minus').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const id = btn.getAttribute('data-id');
+                        const item = cart.find(item => item.id === id);
+                        if (item.quantity > 1) {
+                            item.quantity -= 1;
+                        } else {
+                            const index = cart.findIndex(item => item.id === id);
+                            cart.splice(index, 1);
+                        }
+                        updateCart();
+                    });
+                });
+                
+                document.querySelectorAll('.quantity-btn.plus').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const id = btn.getAttribute('data-id');
+                        const item = cart.find(item => item.id === id);
+                        item.quantity += 1;
+                        updateCart();
+                    });
+                });
+                
+                document.querySelectorAll('.remove-item').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const id = btn.getAttribute('data-id');
+                        const index = cart.findIndex(item => item.id === id);
+                        cart.splice(index, 1);
+                        updateCart();
+                    });
+                });
+            }
+            
+            // Update total
+            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            totalAmount.textContent = `KSH ${total}`;
+        }
+        
+        // Checkout
+        checkoutBtn.addEventListener('click', () => {
+            if (cart.length === 0) {
+                alert('Your cart is empty!');
+            } else {
+                alert('Proceeding to checkout! This would connect to a payment gateway in a real implementation.');
+                // In a real implementation, this would redirect to a checkout page
+            }
+        });
+        
+        // Category Filtering
+        const categoryChips = document.querySelectorAll('.category-chip');
+        const productCards = document.querySelectorAll('.product-card');
+        
+        categoryChips.forEach(chip => {
+            chip.addEventListener('click', () => {
+                // Update active chip
+                categoryChips.forEach(c => c.classList.remove('active'));
+                chip.classList.add('active');
+                
+                // Filter products
+                const category = chip.getAttribute('data-category');
+                
+                productCards.forEach(card => {
+                    if (category === 'all' || card.getAttribute('data-category') === category) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('show');
+        });
+    </script>
+</body>
+</html>

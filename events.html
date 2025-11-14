@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - Starkville Adventures</title>
+    <!-- Meta Tags for Starkville Adventures -->
+    <meta name="description" content="Explore upcoming events and adventures with Starkville Adventures in Kenya. Join us for hikes, camping, team-building activities, and more!">
+    <meta name="keywords" content="Kenya events, hiking events, camping events, team building Kenya, outdoor activities Kenya">
+    
+    <!-- Preload Critical CSS -->
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style2.css">
+    <!-- Add Google Font for Business Name and Styling -->
+    <link href="https://fonts.googleapis.com/css2?family=Recoleta&family=Tangerine:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <!-- Add jsPDF library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    
+    <!-- EmailJS Library -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<!-- Your external EmailJS initialization -->
+<script src="emailjs-init.js"></script>
+    <!-- Your other scripts -->
+<script src="ui.js"></script>
+<script src="other.js"></script>
+
+    
+    
+</head>
+<body>
+    <!-- Header with Logo, Business Name, and Navigation -->
+    <header>
+        <div class="header-container">
+            <div class="header-left">
+                <img src="https://res.cloudinary.com/dwpr0xrjq/image/upload/v1758725534/LOGO_WHITE_BG_harwpu.png" alt="Starkville Adventures Logo" class="logo">
+                <div class="brand-text">
+                    <h1>Starkville Adventures</h1>
+                    <div class="tagline">ADVENTURE &bull; PRESTIGE &bull; DISCOVERY</div>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="social-icons">
+                    <a href="https://web.facebook.com/profile.php?id=61566137716599" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/starkvilleadventures?igsh=YzljYTk1ODg3Zg==" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@starkville.advent?_t=8qwrsPjZTGP&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    <a href="mailto:info@starkvilleadventures.co.ke"><i class="fas fa-envelope"></i></a>
+                </div>
+                <a href="Merch.html" class="book-now-btn">
+  Gear Up <i class="fas fa-shopping-cart"></i>
+</a>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- Sticky Navbar -->
+    <nav class="navbar">
+        <div class="menu-icon" aria-label="Toggle Menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="events.html">Hikes & Events</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="tnc.html">Terms and Conditions</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <!-- Welcome Section -->
+        
+
+        <!-- Quarter Navigation -->
+        <nav class="quarter-nav">
+            <ul>
+                <li><a href="#q1" class="active"><span>(Jan-Mar)</span>Q1</a></li>
+                <li><a href="#q2"><span>(Apr-Jun)</span>Q2</a></li>
+                <li><a href="#q3"><span>(Jul-Sep)</span>Q3</a></li>
+                <li><a href="#q4"><span>(Oct-Dec)</span>Q4</a></li>
+            </ul>
+        </nav>
+
+        <!-- Quarter 1: January - March -->
+        <section id="q1" class="quarter-section">
+            <h2 class="quarter-title">Quarter 1: January - March</h2>
+            <button class="scroll-btn scroll-left">
+  <i class="fas fa-chevron-left"></i>
+</button>
+<button class="scroll-btn scroll-right">
+  <i class="fas fa-chevron-right"></i>
+</button>
+
+            <div class="events-grid">
+                <!-- Event 1 -->
+                <div class="event-card">
+                    <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Winter Hiking" class="event-image">
+                    <div class="event-content">
+                        <h3 class="event-title">Winter Wilderness Hike</h3>
+                        <p class="event-date">January 15, 2024</p>
+                        <p class="event-price">
+                            <span>USD $45 </span>
+                            <span class="secondary-currency">KES 5,828 </span>
+                        </p>
+                        <p class="event-description">Explore the beautiful winter landscapes with our expert guides. Hot cocoa included!</p>
+                        <button class="booking-btn">Book Now</button>
+                    </div>
+                </div>
+                
+                <!-- Event 2 -->
+                <div class="event-card holiday-highlight">
+                    <div class="holiday-badge">Valentine's Day</div>
+                    <img src="https://images.unsplash.com/photo-1519315901367-f34ff9154487?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Romantic Getaway" class="event-image">
+                    <div class="event-content">
+                        <h3 class="event-title">Romantic Mountain Getaway</h3>
+                        <p class="event-date">February 10-14, 2024</p>
+                        <p class="event-price">
+                            <span>USD $299 per couple</span>
+                            <span class="secondary-currency">KES 38,721 per couple</span>
+                        </p>
+                        <p class="event-description">Special Valentine's package including cabin stay, romantic dinner, and couple's massage.</p>
+                        <button class="booking-btn">Book Now</button>
+                    </div>
+                </div>
+                
+                <!-- Event 3 -->
+                <div class="event-card">
+                    <img src="https://images.unsplash.com/photo-1571863533956-01c88e79957e?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Spring Photography" class="event-image">
+                    <div class="event-content">
+                        <h3 class="event-title">Spring Photography Workshop</h3>
+                        <p class="event-date">March 20, 2024</p>
+                        <p class="event-price">
+                            <span>USD $75 </span>
+                            <span class="secondary-currency">KES 9,713 </span>
+                        </p>
+                        <p class="event-description">Capture the beauty of spring with professional photography instruction.</p>
+                        <button class="booking-btn">Book Now</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Quarter 2: April - June -->
+        <section id="q2" class="quarter-section">
+            <h2 class="quarter-title">Quarter 2: April - June</h2>
+            <button class="scroll-btn scroll-left">
+  <i class="fas fa-chevron-left"></i>
+</button>
+<button class="scroll-btn scroll-right">
+  <i class="fas fa-chevron-right"></i>
+</button>
+            <div class="events-grid">
+                <!-- Event 1 -->
+                <div class="event-card">
+                    <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="River Rafting" class="event-image">
+                    <div class="event-content">
+                        <h3 class="event-title">White Water Rafting</h3>
+                        <p class="event-date">April 15, 2024</p>
+                        <p class="event-price">
+                            <span>USD $89 </span>
+                            <span class="secondary-currency">KES 11,526 </span>
+                        </p>
+                        <p class="event-description">Thrilling white water adventure on the Starkville River. All equipment provided.</p>
+                        <button class="booking-btn">Book Now</button>
+                    </div>
+                </div>
+                
+                <!-- Event 2 -->
+                <div class="event-card holiday-highlight">
+                    <div class="holiday-badge">Memorial Day</div>
+                    <img src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Family Camping" class="event-image">
+                    <div class="event-content">
+                        <h3 class="event-title">Family Camping Weekend</h3>
+                        <p class="event-date">May 25-27, 2024</p>
+                        <p class="event-price">
+                            <span>USD $120 per family</span>
+                            <span class="secondary-currency">KES 15,540 per family</span>
+                        </p>
+                        <p class="event-description">Memorial Day weekend camping with activities for all ages. Campfire stories included!</p>
+                        <button class="booking-btn">Book Now</button>
+                    </div>
+                </div>
+                
+                <!-- Event 3 -->
+                <div class="event-card">
+                    <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Rock Climbing" class="event-image">
+                    <div class="event-content">
+                        <h3 class="event-title">Beginner Rock Climbing</h3>
+                        <p class="event-date">June 10, 2024</p>
+                        <p class="event-price">
+                            <span>USD $65 </span>
+                            <span class="secondary-currency">KES 8,418 </span>
+                        </p>
+                        <p class="event-description">Learn the basics of rock climbing with certified instructors. All equipment provided.</p>
+                        <button class="booking-btn">Book Now</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Quarter 3: July - September -->
+        <section id="q3" class="quarter-section">
+            <h2 class="quarter-title">Quarter 3: July - September</h2>
+            <button class="scroll-btn scroll-left">
+  <i class="fas fa-chevron-left"></i>
+</button>
+<button class="scroll-btn scroll-right">
+  <i class="fas fa-chevron-right"></i>
+</button>
+            <div class="events-grid">
+                <!-- Event 1 -->
+                <div class="event-card holiday-highlight">
+                    <div class="holiday-badge">Independence Day</div>
+                    <img src="https://images.unsplash.com/photo-1464207687429-7505649dae38?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Fireworks Viewing" class="event-image">
+                    <div class="event-content">
+                        <h3 class="event-title">Lakeside Fireworks Celebration</h3>
+                        <p class="event-date">July 4, 2024</p>
+                        <p class="event-price">
+                            <span>USD $25 </span>
+                            <span class="secondary-currency">KES 3,238 </span>
+                        </p>
+                        <p class="event-description">Best view of the fireworks from our private lakeside location. BBQ dinner included.</p>
+                        <button class="booking-btn">Book Now</button>
+                    </div>
+                </div>
+                
+                <!-- Event 2 -->
+                <div class="event-card">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Mountain Biking" class="event-image">
+                    <div class="event-content">
+                        <h3 class="event-title">Mountain Biking Adventure</h3>
+                        <p class="event-date">August 12, 2024</p>
+                        <p class="event-price">
+                            <span>USD $55 </span>
+                            <span class="secondary-currency">KES 7,123 </span>
+                        </p>
+                        <p class="event-description">Explore challenging trails with experienced guides. Bike rental available.</p>
+                        <button class="booking-btn">Book Now</button>
+                    </div>
+                </div>
+                
+                <!-- Event 3 -->
+                <div class="event-card holiday-highlight">
+                    <div class="holiday-badge">Labor Day</div>
+                    <img src="https://images.unsplash.com/photo-1571863533956-01c88e79957e?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Kayaking" class="event-image">
+                    <div class="event-content">
+                        <h3 class="event-title">Labor Day Kayak Tour</h3>
+                        <p class="event-date">September 2, 2024</p>
+                        <p class="event-price">
+                            <span>USD $40 </span>
+                            <span class="secondary-currency">KES 5,180 </span>
+                        </p>
+                        <p class="event-description">Relaxing kayak tour along the scenic river. Perfect for all skill levels.</p>
+                        <button class="booking-btn">Book Now</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Quarter 4: October - December -->
+        <section id="q4" class="quarter-section">
+            <h2 class="quarter-title">Quarter 4: October - December</h2>
+            <button class="scroll-btn scroll-left">
+  <i class="fas fa-chevron-left"></i>
+</button>
+<button class="scroll-btn scroll-right">
+  <i class="fas fa-chevron-right"></i>
+</button>
+            <div class="events-grid">
+                <!-- Event 1 -->
+                <div class="event-card">
+                    <img src="https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Fall Foliage" class="event-image">
+                    <div class="event-content">
+                        <h3 class="event-title">Autumn Foliage Tour</h3>
+                        <p class="event-date">October 15, 2024</p>
+                        <p class="event-price">
+                            <span>USD $50 </span>
+                            <span class="secondary-currency">KES 6,475 </span>
+                        </p>
+                        <p class="event-description">Experience the stunning fall colors with our guided tour through the forest.</p>
+                        <button class="booking-btn">Book Now</button>
+                    </div>
+                </div>
+                
+                <!-- Event 2 -->
+                <div class="event-card holiday-highlight">
+                    <div class="holiday-badge">Thanksgiving</div>
+                    <img src="https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Thanksgiving Hike" class="event-image">
+                    <div class="event-content">
+                        <h3 class="event-title">Thanksgiving Morning Hike</h3>
+                        <p class="event-date">November 28, 2024</p>
+                        <p class="event-price">
+                            <span>USD $35 </span>
+                            <span class="secondary-currency">KES 4,533 </span>
+                        </p>
+                        <p class="event-description">Start your Thanksgiving with an energizing hike. Hot apple cider provided.</p>
+                        <button class="booking-btn">Book Now</button>
+                    </div>
+                </div>
+                
+                <!-- Event 3 -->
+                <div class="event-card holiday-highlight">
+                    <div class="holiday-badge">Christmas</div>
+                    <img src="https://images.unsplash.com/photo-1451337516015-6b6e9a44a8a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Winter Wonderland" class="event-image">
+                    <div class="event-content">
+                        <h3 class="event-title">Winter Wonderland Experience</h3>
+                        <p class="event-date">December 20-23, 2024</p>
+                        <p class="event-price">
+                            <span>USD $199 </span>
+                            <span class="secondary-currency">KES 25,771 </span>
+                        </p>
+                        <p class="event-description">Magical winter getaway with sleigh rides, ice skating, and festive activities.</p>
+                        <button class="booking-btn">Book Now</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Custom Events Section -->
+        <section class="custom-events">
+            <div class="custom-quote-container">
+                <button class="scroll-btn scroll-left">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <button class="scroll-btn scroll-right">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+                <div class="quote-cards">
+                    <!-- Custom Itinerary Card -->
+                    <div class="quote-card">
+                        <i class="fas fa-calendar-alt"></i>
+                        <h3>Custom Itinerary</h3>
+                        <p>Plan your perfect adventure with a customized itinerary tailored to your preferences.</p>
+                        <button class="quote-btn" data-target="itinerary-modal">
+  Request Custom Itinerary
+</button>
+
+                    </div>
+
+                    <!-- Safari Tours Card -->
+                    <div class="quote-card">
+                        <i class="fas fa-paw"></i>
+                        <h3>Safari Tours</h3>
+                        <p>Experience the wild beauty of Kenya with our carefully curated safari packages.</p>
+                        <button class="quote-btn" data-target="safari-modal">
+  Request Custom Itinerary
+</button>
+
+                    </div>
+
+                    <!-- Team Building Card -->
+                    <div class="quote-card">
+                        <i class="fas fa-users"></i>
+                        <h3>Team Building</h3>
+                        <p>Strengthen your team bonds with our engaging and interactive team building programs.</p>
+                        <button class="quote-btn" data-target="team-modal">
+  Request Custom Itinerary
+</button>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal Templates -->
+        <div id="itinerary-modal" class="quote-modal">
+            <div class="modal-content">
+                <span class="close-modal" data-target="itinerary-modal">&times;</span>
+
+                <h3><i class="fas fa-calendar-alt"></i> Custom Itinerary Request</h3>
+                <form class="quote-form" data-type="Custom Itinerary">
+  <!-- form fields here -->
+  <button type="submit"></button>
+                    <!-- Contact Information -->
+                    <div class="contact-info-section">
+                        <h4>Contact Information</h4>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="client-name">Full Name <span class="required">*</span></label>
+                                <input type="text" id="client-name" name="client-name" required 
+                                    pattern="^[A-Za-z]+([\s-][A-Za-z]+)*$" 
+                                    title="Please enter your full name">
+                            </div>
+                            <div class="form-group">
+                                <label for="whatsapp">WhatsApp Number <span class="required">*</span></label>
+                                <input type="tel" id="whatsapp" name="whatsapp" required 
+                                    pattern="^(?:254|\+254|0)?([17]\d{8})$"
+                                    title="Please enter a valid Kenyan phone number"
+                                    placeholder="e.g., 0712345678">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required
+                                placeholder="your@email.com">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="itinerary-type">Type of Adventure:</label>
+                        <select id="itinerary-type" name="itinerary-type" onchange="toggleHikingSites(this.value)" required>
+                            <option value="">Select Adventure Type</option>
+                            <option value="hiking">Hiking</option>
+                            <option value="camping">Camping</option>
+                            <option value="photography">Photography Tour</option>
+                            <option value="cultural">Cultural Experience</option>
+                            <option value="mixed">Mixed Activities</option>
+                        </select>
+                    </div>
+                    
+                    <div id="hiking-sites" class="form-group" style="display: none;">
+                        <label>Preferred Hiking Site:</label>
+                        <div class="hiking-options">
+                            <div class="hiking-option">
+                                <input type="radio" id="mt-kenya" name="hiking-site" value="mt-kenya">
+                                <label for="mt-kenya">Mt. Kenya (Difficult)</label>
+                            </div>
+                            <div class="hiking-option">
+                                <input type="radio" id="mt-longonot" name="hiking-site" value="mt-longonot">
+                                <label for="mt-longonot">Mt. Longonot (Moderate)</label>
+                            </div>
+                            <div class="hiking-option">
+                                <input type="radio" id="ngong-hills" name="hiking-site" value="ngong-hills">
+                                <label for="ngong-hills">Ngong Hills (Easy)</label>
+                            </div>
+                            <div class="hiking-option">
+                                <input type="radio" id="other-site" name="hiking-site" value="other">
+                                <label for="other-site">Other (Please specify below)</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="group-size">Group Size:</label>
+                            <input type="number" id="group-size" name="group-size" min="1" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="duration">Duration (Days):</label>
+                            <input type="number" id="duration" name="duration" min="1" onchange="updateDateRange()" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="start-date">Start Date:</label>
+                            <input type="date" id="start-date" name="start-date" onchange="updateDateRange()" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="end-date">End Date:</label>
+                            <input type="date" id="end-date" name="end-date" readonly>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Activities Included:</label>
+                        <div class="activities-grid">
+                            <div class="activity-option">
+                                <input type="checkbox" id="photography" name="activities[]" value="photography">
+                                <label for="photography">Photography</label>
+                            </div>
+                            <div class="activity-option">
+                                <input type="checkbox" id="camping" name="activities[]" value="camping">
+                                <label for="camping">Camping</label>
+                            </div>
+                            <div class="activity-option">
+                                <input type="checkbox" id="wildlife" name="activities[]" value="wildlife">
+                                <label for="wildlife">Wildlife Viewing</label>
+                            </div>
+                            <div class="activity-option">
+                                <input type="checkbox" id="cultural" name="activities[]" value="cultural">
+                                <label for="cultural">Cultural Activities</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="special-requirements">Special Requirements:</label>
+                        <textarea id="special-requirements" name="special-requirements" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Submit Request</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="safari-modal" class="quote-modal">
+            <div class="modal-content">
+                <span class="close-modal" data-target="safari-modal">&times;</span>
+                <h3><i class="fas fa-paw"></i> Safari Tour Booking</h3>
+                <form class="quote-form" data-type="Safari Tour">
+  <!-- form fields -->
+  <button type="submit"></button>
+</form>
+
+                    <!-- Contact Information -->
+                    <div class="contact-info-section">
+                        <h4>Contact Information</h4>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="safari-client-name">Full Name <span class="required">*</span></label>
+                                <input type="text" id="safari-client-name" name="client-name" required 
+                                    pattern="^[A-Za-z]+([\s-][A-Za-z]+)*$" 
+                                    title="Please enter your full name">
+                            </div>
+                            <div class="form-group">
+                                <label for="safari-whatsapp">WhatsApp Number <span class="required">*</span></label>
+                                <input type="tel" id="safari-whatsapp" name="whatsapp" required 
+                                    pattern="^(?:254|\+254|0)?([17]\d{8})$"
+                                    title="Please enter a valid Kenyan phone number"
+                                    placeholder="e.g., 0712345678">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="safari-email">Email Address <span class="required">*</span></label>
+                            <input type="email" id="safari-email" name="email" required
+                                placeholder="your@email.com">
+                        </div>
+                    </div>
+
+                    <!-- Safari Details -->
+                    <div class="safari-details-section">
+                        <h4>Safari Details</h4>
+                        <div class="form-group">
+                            <label for="safari-destination">Preferred Destination <span class="required">*</span></label>
+                            <select id="safari-destination" name="safari-destination" required>
+                                <option value="">Select Destination</option>
+                                <option value="masai-mara">Masai Mara (Big 5 & Migration)</option>
+                                <option value="amboseli">Amboseli (Elephants & Mt. Kilimanjaro)</option>
+                                <option value="tsavo">Tsavo East & West (Wildlife & Scenery)</option>
+                                <option value="nakuru">Lake Nakuru (Flamingos & Rhinos)</option>
+                                <option value="samburu">Samburu (Unique Species & Culture)</option>
+                                <option value="multi">Multi-Park Safari</option>
+                            </select>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="safari-guests">Number of Adults <span class="required">*</span></label>
+                                <input type="number" id="safari-guests" name="safari-guests" min="1" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="safari-children">Number of Children (Under 12)</label>
+                                <input type="number" id="safari-children" name="safari-children" min="0" value="0">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="safari-dates">Preferred Start Date <span class="required">*</span></label>
+                                <input type="date" id="safari-dates" name="safari-dates" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="safari-days">Number of Days <span class="required">*</span></label>
+                                <input type="number" id="safari-days" name="safari-days" min="1" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Safari Activities of Interest:</label>
+                            <div class="activities-grid">
+                                <div class="activity-option">
+                                    <input type="checkbox" id="game-drives" name="activities[]" value="game-drives" checked>
+                                    <label for="game-drives">Game Drives</label>
+                                </div>
+                                <div class="activity-option">
+                                    <input type="checkbox" id="walking-safari" name="activities[]" value="walking-safari">
+                                    <label for="walking-safari">Walking Safari</label>
+                                </div>
+                                <div class="activity-option">
+                                    <input type="checkbox" id="cultural-visits" name="activities[]" value="cultural-visits">
+                                    <label for="cultural-visits">Cultural Visits</label>
+                                </div>
+                                <div class="activity-option">
+                                    <input type="checkbox" id="bird-watching" name="activities[]" value="bird-watching">
+                                    <label for="bird-watching">Bird Watching</label>
+                                </div>
+                                <div class="activity-option">
+                                    <input type="checkbox" id="night-drives" name="activities[]" value="night-drives">
+                                    <label for="night-drives">Night Drives</label>
+                                </div>
+                                <div class="activity-option">
+                                    <input type="checkbox" id="photography" name="activities[]" value="photography">
+                                    <label for="photography">Photography</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="accommodation-type">Accommodation Preference <span class="required">*</span></label>
+                            <select id="accommodation-type" name="accommodation-type" required>
+                                <option value="">Select Accommodation</option>
+                                <option value="luxury">Luxury Lodge (5-star, All-Inclusive)</option>
+                                <option value="mid-range">Mid-Range Lodge (3-4 star)</option>
+                                <option value="budget">Budget Camp (Basic Amenities)</option>
+                                <option value="camping">Camping (Adventure Style)</option>
+                                <option value="mixed">Mixed (Different Each Night)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="safari-requirements">Special Requirements or Preferences</label>
+                            <textarea id="safari-requirements" name="safari-requirements" rows="3" 
+                                placeholder="E.g., Dietary restrictions, mobility needs, photography equipment, specific animals you'd like to see"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="budget-range">Budget Range (Per Person) <span class="required">*</span></label>
+                            <select id="budget-range" name="budget-range" required>
+                                <option value="">Select Budget Range</option>
+                                <option value="budget">Budget (Under $200 per day)</option>
+                                <option value="mid">Mid-Range ($200-$400 per day)</option>
+                                <option value="luxury">Luxury ($400-$800 per day)</option>
+                                <option value="ultra">Ultra-Luxury (Above $800 per day)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Request Safari Quote</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="team-modal" class="quote-modal">
+            <div class="modal-content">
+                <span class="close-modal" data-target="team-modal">&times;</span>
+                <h3><i class="fas fa-users"></i> Team Building Inquiry</h3>
+                <form class="quote-form" data-type="Team Building">
+  <!-- form fields -->
+  <button type="submit"></button>
+</form>
+
+                    <!-- Contact Information -->
+                    <div class="contact-info-section">
+                        <h4>Contact Information</h4>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="team-client-name">Contact Person <span class="required">*</span></label>
+                                <input type="text" id="team-client-name" name="client-name" required 
+                                    pattern="^[A-Za-z]+([\s-][A-Za-z]+)*$" 
+                                    title="Please enter your full name">
+                            </div>
+                            <div class="form-group">
+                                <label for="team-whatsapp">WhatsApp Number <span class="required">*</span></label>
+                                <input type="tel" id="team-whatsapp" name="whatsapp" required 
+                                    pattern="^(?:254|\+254|0)?([17]\d{8})$"
+                                    title="Please enter a valid Kenyan phone number"
+                                    placeholder="e.g., 0712345678">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="team-email">Email Address <span class="required">*</span></label>
+                            <input type="email" id="team-email" name="email" required
+                                placeholder="your@email.com">
+                        </div>
+                    </div>
+
+                    <!-- Company Information -->
+                    <div class="company-info-section">
+                        <h4>Company Information</h4>
+                        <div class="form-group">
+                            <label for="company-name">Company Name <span class="required">*</span></label>
+                            <input type="text" id="company-name" name="company-name" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="team-size">Team Size <span class="required">*</span></label>
+                                <input type="number" id="team-size" name="team-size" min="5" required
+                                    title="Minimum team size is 5 participants">
+                            </div>
+                            <div class="form-group">
+                                <label for="department">Department/Division</label>
+                                <input type="text" id="department" name="department" 
+                                    placeholder="E.g., Sales, IT, Marketing">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Event Details -->
+                    <div class="event-details-section">
+                        <h4>Event Details</h4>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="team-dates">Preferred Date <span class="required">*</span></label>
+                                <input type="date" id="team-dates" name="team-dates" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="event-duration">Duration <span class="required">*</span></label>
+                                <select id="event-duration" name="event-duration" required>
+                                    <option value="">Select Duration</option>
+                                    <option value="half-day">Half Day (4-5 hours)</option>
+                                    <option value="full-day">Full Day (8-9 hours)</option>
+                                    <option value="two-day">Two Days (with overnight)</option>
+                                    <option value="custom">Custom Duration</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="event-objectives">Event Objectives <span class="required">*</span></label>
+                            <div class="activities-grid">
+                                <div class="activity-option">
+                                    <input type="checkbox" id="team-bonding" name="objectives[]" value="team-bonding">
+                                    <label for="team-bonding">Team Bonding</label>
+                                </div>
+                                <div class="activity-option">
+                                    <input type="checkbox" id="leadership" name="objectives[]" value="leadership">
+                                    <label for="leadership">Leadership Development</label>
+                                </div>
+                                <div class="activity-option">
+                                    <input type="checkbox" id="communication" name="objectives[]" value="communication">
+                                    <label for="communication">Communication</label>
+                                </div>
+                                <div class="activity-option">
+                                    <input type="checkbox" id="problem-solving" name="objectives[]" value="problem-solving">
+                                    <label for="problem-solving">Problem Solving</label>
+                                </div>
+                                <div class="activity-option">
+                                    <input type="checkbox" id="stress-relief" name="objectives[]" value="stress-relief">
+                                    <label for="stress-relief">Stress Relief</label>
+                                </div>
+                                <div class="activity-option">
+                                    <input type="checkbox" id="motivation" name="objectives[]" value="motivation">
+                                    <label for="motivation">Motivation</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="activity-preference">Preferred Activities <span class="required">*</span></label>
+                            <div class="activities-grid">
+                                <div class="activity-option">
+                                    <input type="checkbox" id="outdoor-challenges" name="activities[]" value="outdoor-challenges">
+                                    <label for="outdoor-challenges">Outdoor Challenges</label>
+                                </div>
+                                <div class="activity-option">
+                                    <input type="checkbox" id="team-sports" name="activities[]" value="team-sports">
+                                    <label for="team-sports">Team Sports</label>
+                                </div>
+                                <div class="activity-option">
+                                    <input type="checkbox" id="strategy-games" name="activities[]" value="strategy-games">
+                                    <label for="strategy-games">Strategy Games</label>
+                                </div>
+                                <div class="activity-option">
+                                    <input type="checkbox" id="creative-tasks" name="activities[]" value="creative-tasks">
+                                    <label for="creative-tasks">Creative Tasks</label>
+                                </div>
+                                <div class="activity-option">
+                                    <input type="checkbox" id="adventure-activities" name="activities[]" value="adventure-activities">
+                                    <label for="adventure-activities">Adventure Activities</label>
+                                </div>
+                                <div class="activity-option">
+                                    <input type="checkbox" id="workshops" name="activities[]" value="workshops">
+                                    <label for="workshops">Training Workshops</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="venue-preference">Venue Preference <span class="required">*</span></label>
+                            <select id="venue-preference" name="venue-preference" required>
+                                <option value="">Select Venue Type</option>
+                                <option value="outdoor-park">Adventure Park/Outdoor Facility</option>
+                                <option value="hotel-resort">Hotel/Resort with Activities</option>
+                                <option value="conference-center">Conference Center with Gardens</option>
+                                <option value="beach">Beach Location</option>
+                                <option value="forest">Forest/Nature Setting</option>
+                                <option value="company">Company Premises</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="catering">Catering Requirements</label>
+                            <div class="activities-grid">
+                                <div class="activity-option">
+                                    <input type="checkbox" id="breakfast" name="catering[]" value="breakfast">
+                                    <label for="breakfast">Breakfast</label>
+                                </div>
+                                <div class="activity-option">
+                                    <input type="checkbox" id="lunch" name="catering[]" value="lunch">
+                                    <label for="lunch">Lunch</label>
+                                </div>
+                                <div class="activity-option">
+                                    <input type="checkbox" id="dinner" name="catering[]" value="dinner">
+                                    <label for="dinner">Dinner</label>
+                                </div>
+                                <div class="activity-option">
+                                    <input type="checkbox" id="refreshments" name="catering[]" value="refreshments">
+                                    <label for="refreshments">Refreshments</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="budget-range">Budget Range (Per Person)</label>
+                            <select id="budget-range" name="budget-range">
+                                <option value="">Select Budget Range</option>
+                                <option value="basic">Basic (Under KES 5,000)</option>
+                                <option value="standard">Standard (KES 5,000 - 10,000)</option>
+                                <option value="premium">Premium (KES 10,000 - 20,000)</option>
+                                <option value="luxury">Luxury (Above KES 20,000)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="special-requirements">Special Requirements or Notes</label>
+                            <textarea id="special-requirements" name="special-requirements" rows="3"
+                                placeholder="Any specific requirements, dietary restrictions, or additional information"></textarea>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Request Team Building Proposal</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/+254718265014" class="whatsapp-button" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
+
+        <!-- Booking Modal -->
+<div id="bookingModal" class="booking-modal hidden">
+  <div class="modal-content">
+    <button id="closeModalBtn" class="modal-close">&times;</button>
+    <h2 id="modalTripTitle" class="modal-title"></h2>
+    <div id="modalTripDate" class="modal-date"></div>
+    <div id="modalTripPrice" class="modal-price"></div>
+    <div id="modalTripDesc" class="modal-desc"></div>
+
+    <form id="modalBookingForm" autocomplete="off">
+      <div class="form-group">
+        <label>Full Name:</label>
+        <input
+          type="text"
+          id="modalFullName"
+          name="fullName"
+          required
+          pattern="^[A-Za-z]+(\s[A-Za-z]+)+$"
+          title="Please enter at least two names (first and last name)"
+          placeholder="First and Last Name"
+        />
+      </div>
+
+      <div class="form-group">
+        <label>Number of Adults:</label>
+        <input
+          type="number"
+          id="modalAdults"
+          name="adults"
+          min="1"
+          value="1"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label>Number of Minors:</label>
+        <input
+          type="number"
+          id="modalChildren"
+          name="children"
+          min="0"
+          value="0"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label>Preferred Currency:</label>
+        <div id="currencyDisplay" class="currency-display"></div>
+        <label><input type="radio" name="currency" value="KES" checked> KES</label>
+        <label><input type="radio" name="currency" value="USD"> USD</label>
+      </div>
+
+      <div class="form-group">
+        <label>Payment Type:</label>
+        <label><input type="radio" name="paymentType" value="full" checked> Full</label>
+        <label><input type="radio" name="paymentType" value="partial"> Partial</label>
+      </div>
+
+      <div class="form-group">
+        <label for="modalAmount">Amount to Pay:</label>
+        <input
+          type="number"
+          id="modalAmount"
+          name="amount"
+          min="1"
+          step="0.01"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="modalPhone">Phone Number (for STK Push):</label>
+        <input
+          type="tel"
+          id="modalPhone"
+          name="phone"
+          pattern="^\+?\d{10,15}$"
+          placeholder="e.g. 07XXXXXXXX or +2547XXXXXXXX"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label>Confirm Details:</label>
+        <div id="modalConfirmDetails" class="confirm-details"></div>
+      </div>
+
+      <button type="submit" class="confirm-btn">Confirm & Pay</button>
+    </form>
+  </div>
+</div>
+
+    
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <!-- Useful Links -->
+            <div class="footer-column">
+                <h3>Useful Links</h3>
+                <ul>
+                    <li><a href="itinerary.html">Itineraries</a></li>
+                    <li><a href="refund.html">Refund Policy</a></li>
+                    <li><a href="tnc.html">Terms and Conditions</a></li>
+                    <li><a href="login.html">Membership</a></li>
+                    <li><a href="faqs.html">FAQ'S</a></li>
+                    <li><a href="https://chat.whatsapp.com/J034m55UMaICsRsxAOEfUq">Join our Whatsapp group</a></li>
+                </ul>
+                <h4>***</h4>
+            </div>
+
+            <!-- Newsletter Subscription -->
+            <div class="footer-column newsletter">
+                <h3>Subscribe to our Newsletter</h3>
+                <form>
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="footer-column contact-info">
+                <h3>Contact Us</h3>
+                <p>Call or SMS: <a href="tel:+254718265014">0718265014</a></p>
+                <p>Location: Nairobi, Kenya</p>
+                <div class="social-icons">
+                    <a href="https://web.facebook.com/profile.php?id=61566137716599" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/starkvilleadventures?igsh=YzljYTk1ODg3Zg==" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@starkville.advent?_t=8qwrsPjZTGP&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    <a href="mailto:info@starkvilleadventures.co.ke"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright Information -->
+        <div class="footer-bottom">
+            <p>&copy; 2025 Starkville Industries. All rights reserved.</p>
+        </div>
+    </footer>
+    </body>
+</html>

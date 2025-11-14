@@ -1,0 +1,579 @@
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap');
+
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            
+        }
+        body {
+            background:rgba(255, 251, 251, 0.8)
+        }
+
+        
+        #chatchatbutton {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: rgb(3, 75, 31);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: bounce 2s infinite;
+            z-index: 1000;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes levitate {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px); /* Move up */
+            }
+            100% {
+                transform: translateY(0); /* Back to original */
+            }
+        }
+
+        
+        .chat-container {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            width: 350px;
+            height: 500px;
+            background-color: rgba(0, 0, 0, 0.8);
+            background-image: url('https://res.cloudinary.com/dwpr0xrjq/image/upload/v1697651916/happy_jsgs1a.jpg');
+            background-size: cover;
+            background-blend-mode: overlay;
+            border-radius: 8px;
+            display: none;
+            flex-direction: column;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 2000;
+            animation: levitate 3s ease-in-out infinite; /* Apply the animation */
+            transition: opacity 0.3s, visibility 0.3s; /* Smooth toggling */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 0 20px rgba(0, 123, 255, 0.5);
+        }
+
+        .chat-container.active {
+            display: flex; /* Make it visible when toggled */
+        }
+
+        
+        @media (max-width: 400px) {
+            .chat-container {
+                width: 100%;
+                right: 0;
+                bottom: 0;
+                height: 100%;
+            }
+        }
+
+        
+        .chat-header {
+            background-color: rgb(3, 75, 31);
+            padding: 10px;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-family: 'Tangerine', cursive;
+            font-size: 22px;
+            border-radius: 8px;
+            
+        }
+
+        .header-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .chat-header img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .status {
+            font-size: 14px;
+            color: #d4f3e7;
+        }
+
+        .close-chatbutton {
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+       
+        #chatbox {
+            flex: 1;
+            padding: 10px;
+            overflow-y: auto;
+            background-color: rgba(0, 0, 0, 0);
+            font-size: 15px;
+            font-family: Arial, sans-serif;
+        }
+
+        .message-container {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 10px;
+            max-width: 70%;
+        }
+
+        .Globetrotter-message-container {
+            margin-left: auto;
+            justify-content: flex-end;
+        }
+
+        /* Individual chat message */
+.message {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #e1f5fe;
+    border-radius: 12px;
+    max-width: 70%;  /* Adjust the message width */
+    word-wrap: break-word;  /* Ensure long words break correctly */
+    white-space: pre-wrap;  /* Preserve newlines and spaces */
+    display: inline-block;
+    word-break: break-word;  /* Break long words to prevent horizontal scrolling */
+}
+
+
+        .Globetrotter-message {
+    background: linear-gradient(145deg, #dcf8c6, #79a051); 
+    color: #2e7d32; 
+    border-radius: 18px 18px 0 18px; 
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2), -4px -4px 10px rgba(255, 255, 255, 0.3); 
+    padding: 10px 15px;
+    position: relative;
+}
+
+        
+.bot-message {
+    background: linear-gradient(145deg, #ffffff, #b3aeae); 
+    color: #333333; 
+    border-radius: 18px 18px 18px 0; 
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1), -4px -4px 10px rgba(255, 255, 255, 0.3); 
+    padding: 10px 15px;
+    position: relative;
+}
+
+.message:hover {
+    transform: scale(1.02);
+    transition: transform 0.4s ease-in-out; 
+}
+
+
+
+        .timestamp {
+            font-size: 10px;
+            color: #555;
+            font-weight: bold;
+            margin-top: 5px;
+            text-align: right;
+        }
+
+        
+        /* Ensure rounded corners across all screens */
+.input-section {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #ffffff;
+    border-top: 1px solid #4f4e4e;
+    border-radius: 20px; /* Rounded corners for the input section */
+    margin-top: auto; /* Ensure the input section sticks to the bottom */
+}
+
+/* Style for the message input box */
+#GlobetrotterInput {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #adacac;
+    border-radius: 20px; /* Rounded corners for the input box */
+    font-size: 16px;
+    outline: none;
+    margin-right: 10px;
+    resize: vertical; /* Allow vertical resizing (grows like WhatsApp's text box) */
+    min-height: 40px; /* Minimum height */
+    max-height: 150px; /* Maximum height (adjustable as needed) */
+}
+
+/* Send chatchatbutton adjustments */
+chatbutton {
+    background-color: rgb(3, 75, 31);
+    color: #ffffff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    width: 40px;  /* Fixed width for the chatbutton */
+    height: 40px; /* Fixed height to prevent overflow */
+}
+
+        /* Define the bright color typing indicator animation */
+@keyframes colorChange {
+    0% {
+        color: #FF00FF; /* Bright Magenta */
+    }
+    25% {
+        color: #00FF00; /* Neon Green */
+    }
+    50% {
+        color: #FFFF00; /* Bright Yellow */
+    }
+    75% {
+        color: #00FFFF; /* Cyan */
+    }
+    100% {
+        color: #0000FF; /* Bright Blue */
+    }
+}
+
+/* Apply the animation to the typing indicator */
+.typing-indicator {
+    font-size: 16px;
+    font-weight: bold;
+    animation: colorChange 2s infinite; /* 2 seconds loop */
+}
+/* Media query for screens with width 425px to 768px */
+@media (max-width: 768px) and (min-width: 425px) {
+    #chatContainer {
+        width: 250px;  /* Smaller width */
+        height: 350px; /* Smaller height */
+        padding: 8px;  /* Adjust padding */
+        font-size: 14px; /* Slightly smaller font size */
+        bottom: 20px; /* Lower the container to make the close chatbutton easier to access */
+    }
+
+    #chatchatbutton {
+        padding: 8px 12px;  /* Smaller chatbutton size */
+        font-size: 14px;     /* Smaller font size */
+    }
+
+    /* Adjust the input section to fit better */
+    .input-section {
+        flex-wrap: wrap; /* Allow elements to wrap */
+        justify-content: space-between; /* Distribute space between input and chatbutton */
+    }
+
+    #GlobetrotterInput {
+        flex: 1;  /* Allow input to grow */
+        max-width: calc(100% - 50px); /* Ensure input doesn't exceed available space */
+        margin-right: 10px;  /* Space between input and chatbutton */
+    }
+
+    chatbutton {
+        width: 40px;  /* Fixed width for the chatbutton */
+        height: 40px; /* Fixed height to prevent overflow */
+        padding: 8px 12px;
+        font-size: 16px; /* Adjust font size */
+    }
+}
+
+/* Media query for screens with width 375px and below */
+@media (max-width: 375px) {
+    #chatContainer {
+        width: 100%;  /* Fill the entire screen width */
+        height: 100%; /* Fill the entire screen height */
+        padding: 8px;
+        font-size: 14px;
+        bottom: 0;    /* Align the container to the bottom of the screen */
+    }
+
+    #chatchatbutton {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+}
+
+.events-section {
+    padding: 1.5rem 1rem; /* Reduced padding for compact design */
+    background: url('https://res.cloudinary.com/dwpr0xrjq/image/upload/v1735880587/adventurous-couple-jump-into-lake-product-5e09f02fd5b32._1600_n7033g.jpg') center/cover no-repeat;
+    color: white;
+    background-attachment: fixed;
+  }
+
+  .events-section h2 {
+    text-align: center;
+    font-family: 'Tangerine', cursive;
+    font-size: 3.5rem; /* Reduced font size */
+    color: #0c6912; /* Yellow */
+    margin-bottom: 0.5rem; /* Tighten spacing */
+  }
+
+  .events-section p {
+    text-align: center;
+    font-size: 1rem; /* Smaller font size for the description */
+    color: #ddd; /* Lighter shade of white */
+    margin-bottom: 1.5rem; /* Tightened spacing */
+  }
+
+  .events-grid {
+    display: grid;
+    gap: 1rem; /* Smaller gap between cards */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjusted card width */
+  }
+
+  .event-card {
+    background: linear-gradient(145deg, rgba(0, 51, 0, 0.8), rgba(34, 139, 34, 0.8));
+    border-radius: 6px; /* Slightly smaller radius */
+    overflow: hidden;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3); /* Reduced shadow */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .event-card:hover {
+    transform: scale(1.02); /* Subtle hover effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  }
+
+  .event-card img {
+    width: 100%;
+    height: 150px; /* Reduced height for compact layout */
+    object-fit: contain; /* Ensure the entire image fits */
+    background-color: #222; /* Background color for empty spaces */
+  }
+
+  .event-card-content {
+    padding: 0.75rem; /* Reduced padding */
+  }
+
+  .event-card h3 {
+    margin: 0 0 0.5rem;
+    font-family: 'Tangerine', cursive;
+    font-size: 1.5rem; /* Reduced title size */
+    color: #FFD700; /* Yellow */
+  }
+
+  .event-meta {
+    font-size: 0.8rem; /* Smaller font size */
+    margin-bottom: 0.5rem;
+    color: #F5F5F5;
+  }
+
+  .event-prices {
+    display: flex;
+    gap: 0.5rem; /* Tighter spacing */
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 0.9rem; /* Smaller font size */
+  }
+
+  .event-prices .original-price {
+    text-decoration: line-through;
+    color: #FFD700; /* Yellow */
+  }
+
+  .event-prices .discounted-price {
+    color: white;
+    font-weight: bold;
+  }
+
+  .event-btn {
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .event-btn button {
+    padding: 0.4rem 0.8rem; /* Smaller button size */
+    background: linear-gradient(45deg, #FFD700, #FF8C00);
+    color: black;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+
+  .event-btn button:hover {
+    background: linear-gradient(45deg, #FFC107, #FFA500);
+    transform: translateY(-2px); /* Reduced hover lift */
+  }
+
+  .event-detail {
+    max-height: 0;
+    overflow-y: auto;
+    text-align: left;
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    opacity: 0;
+    margin-top: 0.75rem; /* Reduced spacing */
+    font-size: 0.85rem; /* Smaller font size */
+    color: #E0E0E0;
+    line-height: 1.5;
+    padding: 0.5rem;
+    
+  }
+
+  .event-detail.open {
+    max-height: 400px; /* Adjusted for smaller details */
+    opacity: 1;
+  }
+  .event-card.expanded .event-details {
+    max-height: 200px; /* Adjust based on your needs */
+  }
+
+  @media (min-width: 1024px) {
+    .events-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+ /* Footer Styles */
+ footer {
+    background-color: rgb(0, 0, 0);
+    color: rgb(223, 216, 216);
+    padding: 40px 20px;
+    text-align: center;
+    position: relative;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Footer Column Styles */
+.footer-column {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-column h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #fbd93f; /* Accent color for headings */
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: #8cb3a8;
+}
+
+/* Newsletter Subscription */
+.newsletter input[type="email"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.newsletter button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #fbd93f; /* Accent Yellow */
+    color: black;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.newsletter button:hover {
+    background-color: #99906c;
+}
+
+/* Contact Information */
+.contact-info p {
+    margin-bottom: 10px;
+}
+
+.contact-info a {
+    color: white;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    color: #8cb3a8;
+}
+
+.social-icons {
+    margin-top: 15px;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    color: white;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #fbd93f; /* Accent Yellow */
+}
+
+/* Partnerships and Sponsors Section */
+.footer-column.partnerships {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.footer-column.partnerships h3 {
+    color: #fbd93f;
+}
+
+.footer-column.partnerships .partners-logos {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    margin-top: 1em;
+}
+
+.footer-column.partnerships .partners-logos img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.footer-column.partnerships .partners-logos img:hover {
+    transform: scale(1.1);
+}
+
+/* Copyright Section */
+.footer-bottom {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #666;
+}
+
+.footer-bottom p {
+    margin: 0;
+    color: #99906c; /* Earthy tone for copyright */
+    font-size: 1rem;
+    text-align: center;
+}
