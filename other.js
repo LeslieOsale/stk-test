@@ -1375,6 +1375,7 @@ document.addEventListener('DOMContentLoaded', function() {
             showPaymentMessage('Sending payment request . Please check your phone...', true);
 
             try {
+                    console.log("Sending STK push to Render:", phone, amount);
                 const resp = await fetch('https://starkville-backend-2f2f.onrender.com/stkpush', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -1954,5 +1955,6 @@ try {
 }
 
     
+
 
 
