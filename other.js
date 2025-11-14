@@ -1381,7 +1381,25 @@ document.addEventListener('DOMContentLoaded', function() {
                     body: JSON.stringify({ phone: formatPhone(phone), amount: Number(amount) })
                 });
 
-                const data = await resp.json();
+                // Robustly handle response type
+                let data;
+                const contentType = resp.headers.get('content-type') || '';
+                if (contentType.includes('application/json')) {
+                    try {
+                        data = await resp.json();
+                    } catch (err) {
+                        console.error('Failed to parse JSON from payment API:', err);
+                        showPaymentMessage('Payment server returned invalid JSON.', false);
+                        return;
+                    }
+                } else {
+                    // Try to get text for debugging
+                    const text = await resp.text();
+                    console.error('Payment API did not return JSON. Raw response:', text);
+                    showPaymentMessage('Payment server error: ' + (text.slice(0, 200) || 'Unknown error'), false);
+                    return;
+                }
+                    //test fix
 
                 if (!data || !data.success) {
                     showPaymentMessage('Failed to initiate payment: ' + (data && data.error ? data.error : 'Unknown error'), false);
@@ -1936,3 +1954,4 @@ try {
 }
 
     
+
