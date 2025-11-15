@@ -1019,9 +1019,7 @@
 }
 
 @media screen and (max-width: 768px) {
-    .book-now-btn {
-        display: none !important;
-    }
+    
 }
 
 .book-now-btn:hover {
@@ -1875,6 +1873,7 @@
   background-color: #28a428;
   transform: scale(1.05);
 }
+
 
 
 
