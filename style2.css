@@ -435,7 +435,7 @@
             padding: 10px;
             border: 1px solid rgba(255, 215, 0, 0.3);
             border-radius: 8px;
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(186, 211, 198, 0.505);
             color: white;
             font-size: 1rem;
         }
@@ -1875,5 +1875,6 @@
   background-color: #28a428;
   transform: scale(1.05);
 }
+
 
 
