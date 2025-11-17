@@ -1000,53 +1000,86 @@
     gap: 18px;
 }
 
-/* Book Now button */
-/* Book Now button visible only on tablets and larger screens */
+/* ===== BOOK NOW BUTTON (default) ===== */
 .book-now-btn {
-    display: inline-block;
-    background: linear-gradient(135deg, #FFD700, #155834);
+    background: linear-gradient(135deg, #ffffff, #155834);
+    background-size: 200% 200%;            /* allows movement */
+    animation: gradientMove 6s ease infinite;
+
     color: #262c35;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    font-size: 1rem;
-    padding: 10px 22px;
-    border-radius: 30px;
-    margin-left: 12px;
+    font-size: 0.9rem;                     /* reduced size */
+    padding: 8px 18px;                     /* reduced */
+    border-radius: 26px;
+    margin-left: 10px;
+
     text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
     box-shadow: 0 2px 8px rgba(21,88,52,0.10);
-    transition: background 0.3s, color 0.3s, transform 0.2s;
-    white-space: nowrap;
+    transition: transform 0.25s cubic-bezier(.28,.84,.42,1), color 0.3s;
 }
 
-@media screen and (max-width: 768px) {
-    
+/* Gradient animation */
+@keyframes gradientMove {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
+/* Bounce on hover */
 .book-now-btn:hover {
+    transform: scale(1.05) translateY(-3px);   /* bounce */
     background: linear-gradient(135deg, #155834, #FFD700);
     color: #fff;
-    transform: scale(1.08);
 }
 
-@media screen and (max-width: 768px) {
+/* ===== TABLETS (hide text, resize) ===== */
+@media (max-width: 768px) {
+    .header-right {
+        justify-content: flex-start !important;
+    }
+    .book-now-btn .btn-text {
+        display: none !important;
+    }
     .book-now-btn {
-        font-size: 0.95rem;
-        padding: 9px 16px;
-        margin-left: 0;
-        margin-top: 8px;
-        width: 100%;
-        text-align: center;
-        border-radius: 24px;
+        font-size: 0;
+        padding: 0 !important;
+        width: 44px !important;
+        height: 44px !important;
+        border-radius: 50% !important;
+        margin-left: 0 !important;
+        margin-top: 8px !important;
+        justify-content: center;
+        align-items: center;
+    }
+    .book-now-btn i {
+        font-size: 1.3rem !important;
+        margin: 0 !important;
     }
 }
 
-@media screen and (max-width: 480px) {
+/* ===== SMALL PHONES ===== */
+@media (max-width: 480px) {
+    .header-right {
+        justify-content: flex-start !important;
+    }
     .book-now-btn {
-        font-size: 0.85rem;
-        padding: 8px 8px;
-        margin-top: 10px;
-        width: 100%;
-        border-radius: 20px;
+        font-size: 0;
+        padding: 0 !important;
+        width: 36px !important;
+        height: 36px !important;
+        border-radius: 50% !important;
+        margin-top: 10px !important;
+        justify-content: center;
+        align-items: center;
+    }
+    .book-now-btn i {
+        font-size: 1rem !important;
+        margin: 0 !important;
     }
 }
 
@@ -1421,8 +1454,6 @@
             text-decoration: none;
             box-shadow: 0 2px 8px rgba(21,88,52,0.10);
             transition: background 0.3s, color 0.3s, transform 0.2s;
-            width: 100%;
-            text-align: center;
         }
         
         .booking-btn:hover {
@@ -1497,19 +1528,25 @@
         /* Navbar Styling */
         
     .navbar {
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)); /* Transparent black gradient */
-    position: sticky;
-    top: 0;
-    width: 100%; /* Full width across all screen sizes */
-    z-index: 100;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 7px 14px;
-    box-sizing: border-box;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-top: 0px;
-}
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6));
+        position: sticky;
+        top: 0;
+        width: 100%;
+        z-index: 100;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 7px 14px;
+        box-sizing: border-box;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-top: 0px;
+    }
+
+    .navbar-right {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+    }
 
 /* Navbar Links */
 .navbar ul {
@@ -1519,8 +1556,75 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%; /* Ensure navbar content spans the full width */
-    box-sizing: border-box; /* Prevent overflow */
+    flex: 1 1 auto;
+    box-sizing: border-box;
+}
+/* Responsive: Cart left, hamburger center, links hidden on mobile */
+@media screen and (max-width: 768px) {
+        .navbar {
+            justify-content: center;
+            position: relative;
+            min-height: 40px;
+            padding-top: 16px;
+            padding-bottom: 16px;
+        }
+        .navbar .book-now-btn {
+            position: absolute;
+            right: 10px;
+            left: auto;
+            top: 50%;
+            transform: translateY(-50%);
+            margin: 0 !important;
+            width: 32px !important;
+            height: 32px !important;
+            min-width: 0 !important;
+            min-height: 0 !important;
+            border-radius: 50% !important;
+            font-size: 0 !important;
+            padding: 0 !important;
+            z-index: 102;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .navbar .book-now-btn i {
+            font-size: 1.1rem !important;
+            margin: 0 !important;
+        }
+            .navbar .book-now-btn {
+                width: 26px !important;
+                height: 26px !important;
+                right: 6px;
+            }
+            .navbar .book-now-btn i {
+                font-size: 0.85rem !important;
+            }
+    .navbar .menu-icon {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 103;
+    }
+    .navbar ul {
+        display: none;
+    }
+    .navbar ul.active {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background: rgba(0, 0, 0, 0.9);
+        width: 100%;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 100;
+        box-sizing: border-box;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 .navbar li {
@@ -1530,12 +1634,26 @@
 .navbar a {
     color: #fff;
     text-decoration: none;
-    font-size: 1.3rem; /* Adjusted font size */
+    font-size: 1.15rem;
     font-weight: 500;
     font-family: 'Recoleta', sans-serif;
-    padding: 10px 20px; /* Adjust padding for better spacing */
+    padding: 10px 20px;
     transition: background-color 0.3s ease, color 0.3s ease;
-    box-sizing: border-box; /* Prevent overflow */
+    box-sizing: border-box;
+}
+
+.navbar .book-now-btn {
+    font-size: 1.1rem !important;
+    padding: 8px 18px !important;
+    border-radius: 50px !important;
+    margin-left: 18px !important;
+    margin-right: 0 !important;
+    min-width: 40px;
+    min-height: 40px;
+    box-shadow: 0 2px 8px rgba(21,88,52,0.10);
+    align-items: center;
+    justify-content: center;
+    display: inline-flex;
 }
 
 .navbar a:hover {
@@ -1644,7 +1762,6 @@
         color: #eaff00;
     }
 
-    
 /* ================================
    BOOKING MODAL (Glass Morph)
    ================================ */
@@ -1874,6 +1991,27 @@
   transform: scale(1.05);
 }
 
+/* Quarter title styling */
+.quarter-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
 
+.quarter-title .quarter-range {
+  display: block;
+  font-size: 1.1rem;
+  color: #FFD700;
+  margin-top: 0.2em;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
 
-
+@media (max-width: 600px) {
+  .quarter-title {
+    font-size: 1.5rem;
+  }
+  .quarter-title .quarter-range {
+    font-size: 0.95rem;
+  }
+}
