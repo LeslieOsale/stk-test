@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+                <link rel="preconnect" href="https://fonts.googleapis.com">
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                <link href="https://fonts.googleapis.com/css2?family=Story+Script&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Carattere&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cookie&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon -->
+<link rel="icon" href="https://res.cloudinary.com/dwpr0xrjq/image/upload/v1758725534/LOGO_WHITE_BG_harwpu.png" type="image/png">
+
+    <title>About Us - Starkville Adventures</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&family=Poppins:wght@400;500&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <!-- Preload Critical CSS -->
+  <link rel="preload" href="styles.css" as="style">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="style2.css">
+    <!-- Add Google Font for Business Name and Disco Clock -->
+     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+                        /* Use Cookie font for about section body text */
+                            .about-text-col p,
+                            .about-text-col ul,
+                            .about-text-col li,
+                            .about-text-col span {
+                                font-family: 'Tinos', serif;
+                                font-size: 1.1rem !important;
+                                color: #333;
+
+                            }
+                                
+                            
+                .about-flex-row {
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    gap: 2rem;
+                    justify-content: center;
+                }
+                .about-flex-row.reverse {
+                    flex-direction: row-reverse;
+                }
+                .about-img-col {
+                    flex: 1 1 320px;
+                    min-width: 260px;
+                    max-width: 420px;
+                }
+                .about-img-col img {
+                    width: 100%;
+                    border-radius: 1.2rem;
+                    box-shadow: 0 2px 12px rgba(8,113,57,0.10);
+                    object-fit: cover;
+                    max-height: 260px;
+                }
+                .about-text-col {
+                    flex: 2 1 400px;
+                    min-width: 260px;
+                    max-width: 600px;
+                    text-align: left;
+                }
+                .about-text-col ul {
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                }
+                .about-text-col li {
+                    margin-bottom: 1.2rem;
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 0.7rem;
+                }
+                .about-text-col li:last-child {
+                    margin-bottom: 0;
+                }
+                .about-text-col span.icon {
+                    font-size: 1.5rem;
+                    color: #087139;
+                }
+                .about-text-col h4 {
+                    color: #087139;
+                    margin: 1rem 0 0.5rem 0;
+                    font-size: 1.7rem;
+                }
+                .about-text-col p, .about-text-col ul {
+                    font-size: 1.1rem;
+                }
+        /* General Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        /* Stat Cards Row and Card Styling */
+        .stat-cards-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.2rem;
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            transform: translateY(-50%);
+        }
+
+        .stat-card {
+            background: #fff;
+            border-radius: 1rem;
+            box-shadow: 0 2px 8px rgba(8,113,57,0.10);
+            padding: 1.1rem 0.7rem;
+            min-width: 100px;
+            max-width: 120px;
+            flex: 1 1 100px;
+            text-align: center;
+            border-top: #006400;
+            border-left: #087139;
+        }
+
+        .stat-card .stat-icon {
+            font-size: 1.4rem;
+            color: #087139;
+        }
+
+        .stat-card .stat-value {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #087139;
+        }
+
+        .stat-card .stat-label {
+            font-size: 0.85rem;
+            color: #444;
+        }
+
+        /* Use Tangerine font for stat card text */
+        .stat-card .stat-icon,
+        .stat-card .stat-label {
+            font-family: 'Tangerine', cursive !important;
+            letter-spacing: 0.5px;
+            font-size: 18px;
+        }
+        .stat-card .stat-value {
+            font-family: 'Tangerine', cursive !important;
+            letter-spacing: 0.5px;
+            font-size: 24px;
+        }
+
+        /* Responsive Stat Cards: always horizontal, shrink to fit */
+        @media (max-width: 700px) {
+            .stat-cards-row {
+                gap: 0.5rem;
+                max-width: 100vw;
+            }
+            .stat-card {
+                min-width: 70px;
+                max-width: 80px;
+                padding: 0.7rem 0.3rem;
+            }
+            .stat-card .stat-icon {
+                font-size: 1.1rem;
+            }
+            .stat-card .stat-value {
+                font-size: 1rem;
+            }
+            .stat-card .stat-label {
+                font-size: 0.7rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stat-cards-row {
+                gap: 0.2rem;
+                padding: 0 2px;
+            }
+            .stat-card {
+                min-width: 50px;
+                max-width: 60px;
+                padding: 0.4rem 0.1rem;
+            }
+            .stat-card .stat-icon {
+                font-size: 0.9rem;
+            }
+            .stat-card .stat-value {
+                font-size: 0.8rem;
+            }
+            .stat-card .stat-label {
+                font-size: 0.6rem;
+            }
+        }
+
+        h1, h2 {
+            font-family: 'Tangerine', sans-serif;
+            color: #3b9163;
+        }
+
+        /* Use Playfair Display for main section headings */
+        .container h3.section-title, .section-container h3.section-title {
+            font-family: 'Playfair Display', serif !important;
+            color: #006400;
+            font-size: 2.7rem;
+            letter-spacing: 0.5px;
+            font-weight: bold;
+        }
+        .container h3, .section-container h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: #006400;
+            font-size: 2rem;
+        }
+
+        
+
+/* Navbar Styling */
+.navbar {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)); /* Transparent black gradient */
+    position: sticky;
+    top: 0;
+    width: 100%; /* Full width across all screen sizes */
+    z-index: 100;
+    display: flex;
+    justify-content: center; /* Adjust for the menu icon */
+    align-items: center;
+    padding: 7px 14px; /* Adjust padding for spacing */
+    box-sizing: border-box; /* Include padding and border in width calculation */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Navbar Links */
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Ensure navbar content spans the full width */
+    box-sizing: border-box; /* Prevent overflow */
+}
+
+.navbar li {
+    margin: 0 10px; /* Margin between links */
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.3rem; /* Adjusted font size */
+    font-weight: 500;
+    font-family: 'Recoleta', sans-serif;
+    padding: 10px 20px; /* Adjust padding for better spacing */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-sizing: border-box; /* Prevent overflow */
+}
+
+.navbar a:hover {
+    background-color: #8cb3a8; /* Light Green */
+    color: #fff;
+    border-radius: 8px;
+}
+
+/* Hamburger Menu Icon */
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 25px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.menu-icon .bar {
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 2px;
+    transition: transform 0.3s ease;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .menu-icon {
+        display: flex; /* Show the menu icon on smaller screens */
+    }
+
+    .navbar ul {
+        display: none; /* Hide the menu initially */
+        flex-direction: column;
+        gap: 10px; /* Adjusted gap for spacing */
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background: rgba(0, 0, 0, 0.9);
+        width: 100%; /* Full width across small screens */
+        padding: 14px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 100;
+        box-sizing: border-box; /* Prevent overflow */
+    }
+
+    .navbar ul.active {
+        display: flex; /* Show the menu when active */
+    }
+
+    .navbar li {
+        margin: 4px 0;
+        text-align: center;
+    }
+
+    .navbar a {
+        width: 100%; /* Make sure the links take up the full width */
+        padding: 12px 0; /* Adjust padding */
+        box-sizing: border-box; /* Prevent overflow */
+    }
+}
+
+/* Full width for all screen sizes */
+@media screen and (min-width: 320px) {
+    .navbar {
+        width: 100%; /* Ensure full width on small screens */
+    }
+}
+
+
+/* Main Container Styling - match events.html for clarity and color */
+.container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2.5rem 1.5rem;
+  background: rgba(255,255,255,0.35);
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+  border: 2px solid rgba(255,255,255,0.18);
+  backdrop-filter: blur(8px) saturate(120%);
+  -webkit-backdrop-filter: blur(8px) saturate(120%);
+  border-left: 8px solid #087139;
+  border-right: 8px solid #087139;
+  box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+  .container {
+    padding: 1.5rem 0.5rem;
+    border-left: 5px solid #087139;
+    border-right: 5px solid #087139;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 1rem 0.2rem;
+    border-radius: 0.7rem;
+    border-left: 3px solid #087139;
+    border-right: 3px solid #087139;
+  }
+}
+
+@media (max-width: 400px) {
+  .container {
+    padding: 0.5rem 0.05rem;
+    border-left: 2px solid #087139;
+    border-right: 2px solid #087139;
+  }
+}
+
+/* Section container border left/right always visible */
+.section-container {
+  border-left: 6px solid #ffd700 !important;
+  border-right: 6px solid #ffd700;
+  box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+  .section-container {
+    border-left: 4px solid #ffd700;
+    border-right: 4px solid #ffd700;
+  }
+}
+
+@media (max-width: 600px) {
+  .section-container {
+    border-left: 2px solid #ffd700;
+    border-right: 2px solid #ffd700;
+  }
+}
+
+        /* About Us Section */
+.about-section {
+    background-image: url('https://res.cloudinary.com/dwpr0xrjq/image/upload/v1730451912/panoramic-view-skyline-nairobi-kenya-with-uhuru-park-foreground_1033579-212032_bfpc8p.avif');
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(49, 40, 40);
+    transition: opacity 0.5s ease;
+    
+}
+
+.about-section:hover {
+    opacity: 0.9;
+}
+
+.about-content {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    width: 90%;
+    max-width: 800px;
+    border-radius: 15px;
+    text-align: center;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+
+.about-content h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+    font-family: 'Georgia', serif;
+    color: #ffd700;
+}
+
+.about-content p {
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    color: #f0f0f0;
+}
+
+.about-content a {
+    background-color: #006400;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.about-content a:hover {
+    background-color: #ffd700;
+    color: #000000;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-section {
+        height: auto;
+        padding: 20px;
+    }
+
+    .about-content {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .about-content h2 {
+        font-size: 28px;
+    }
+
+    .about-content p {
+        font-size: 13px;
+    }
+
+    .about-content a {
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-section {
+        height: auto;
+        padding: 15px;
+    }
+
+    .about-content h2 {
+        font-size: 24px;
+    }
+
+    .about-content p {
+        font-size: 12px;
+    }
+
+    .about-content a {
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+}
+
+
+
+/* Section Container - match events.html card style */
+.section-container {
+    background: #fff;
+    border-radius: 1.2rem;
+    box-shadow: 0 4px 16px rgba(8,113,57,0.08);
+    padding: 2.5rem 1.5rem;
+    margin: 0 auto 2.5rem auto;
+    border: 1.5px solid #e0e7ef;
+    text-align: center;
+    width: 100%;
+    max-width: 1000px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .section-container {
+        padding: 30px;
+        max-width: 700px;
+        width: 90%; /* Maintain proportional width */
+        border-left: 6px solid #006400;
+        border-right: 6px solid #006400;
+        left: -15px; /* Smaller left shift */
+    }
+}
+
+@media (max-width: 480px) {
+    .section-container {
+        padding: 20px;
+        max-width: 90%;
+        width: 90%;
+        border-left: 6px solid #006400;
+        border-right: 6px solid #006400;
+        background-size: contain;
+        left: -10px; /* Adjusted for narrow screens */
+    }
+}
+
+@media (max-width: 320px) {
+    .section-container {
+        padding: 15px;
+        max-width: 95%;
+        width: 95%;
+        border-left: 5px solid #006400;
+        border-right: 5px solid #006400;
+        background-size: contain;
+        left: -5px; /* Minimal shift for very small screens */
+    }
+}
+
+
+        /* Meet Our Team Section */
+        .team-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .team-member {
+            width: 100%;
+            max-width: 250px;
+            background-color: #ffffff;
+            border-radius: 7% ;
+            overflow: hidden;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 8px solid #ffd700;
+            border-bottom: 10px solid #006400;
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        .team-member img {
+            width: 95%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10%;
+        }
+
+        /* Join Section */
+            
+        
+/* WhatsApp Button */
+.whatsapp-button {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    animation: bounce 2s infinite;
+    z-index: 999;
+}
+
+.whatsapp-button img {
+    width: 35px;
+    height: 35px;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+            .about-content,
+            .section-container {
+                width: 85%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about-content,
+            .section-container {
+                width: 95%;
+            }
+
+            .team-member {
+                width: 90%;
+            }
+        }
+
+        /* Make 'Our Story: From Passion to Purpose' and similar headings use Tangerine font */
+.section-container h3,
+.section-container h3[style*='Our Story'],
+.section-container h3[style*='What We Stand For'],
+.section-container h3[style*='Our Core Values'] {
+  font-family: 'Tangerine', cursive !important;
+  font-size: 1.5rem !important;
+  color: #087139 !important;
+  letter-spacing: 1px;
+}
+    </style>
+</head>
+<body>
+    <!-- Header with Logo, Business Name, and Navigation (Consistent with events.html) -->
+    <header>
+        <div class="header-container">
+            <div class="header-left">
+                <img src="https://res.cloudinary.com/dwpr0xrjq/image/upload/v1758725534/LOGO_WHITE_BG_harwpu.png" alt="Starkville Adventures Logo" class="logo">
+                <div class="brand-text">
+                    <h1>Starkville Adventures</h1>
+                    <div class="tagline">ADVENTURE &bull; PRESTIGE &bull; DISCOVERY</div>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="social-icons">
+                    <a href="https://web.facebook.com/profile.php?id=61566137716599" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/starkvilleadventures?igsh=YzljYTk1ODg3Zg==" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@starkville.advent?_t=8qwrsPjZTGP&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    <a href="mailto:info@starkvilleadventures.co.ke"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sticky Navbar (Consistent with events.html) -->
+    <nav class="navbar">
+        <div class="menu-icon" aria-label="Toggle Menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="events.html">Hikes & Events</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+        <a href="Merch.html" class="book-now-btn">
+            <span class="btn-text">Gear-Up</span>
+            <i class="fas fa-shopping-cart"></i>
+        </a>
+    </nav>
+
+        <!-- About Section (Redesigned, no hero, stat cards added) -->
+        <div class="container">
+            
+
+            <!-- Stat Cards Row (smaller, overlay style) -->
+            <div class="stat-cards-row">
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-hiking"></i></div>
+                    <div class="stat-value">120+</div>
+                    <div class="stat-label">Adventures</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-users"></i></div>
+                    <div class="stat-value">500+</div>
+                    <div class="stat-label">Adventurers</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-mountain"></i></div>
+                    <div class="stat-value">15+</div>
+                    <div class="stat-label">Destinations</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-award"></i></div>
+                    <div class="stat-value">5.0</div>
+                    <div class="stat-label">Star Rating</div>
+                </div>
+            </div>
+        
+            <!-- Our Story Section -->
+            <div class="section-container" style="margin-bottom:2.5rem;">
+                <div class="about-flex-row">
+                    <div class="about-img-col">
+                        <img src="https://res.cloudinary.com/dwpr0xrjq/image/upload/v1728648269/hike_e.hills_rcua92.jpg" alt="Group of hikers on a Kenyan trail">
+                    </div>
+                    <div class="about-text-col">
+                        <h3 class="section-title">Our Story: From Passion to Purpose</h3>
+                            <p>Starkville Adventures was born from a single idea:that adventure should feel alive again.</p>
+                            <p>It started with a small group of explorers chasing sunrises, discovering hidden trails, and realizing that the world felt different when shared with people who love the wild just as much.</p>
+                            <p>What began as weekend escapes slowly grew into a community , a tribe of dreamers, hikers, travelers, and storytellers. Their passion shaped a movement, and that movement became Starkville Adventures.</p>
+                            <p> Today, Starkville is more than a tour company.It’s a place where moments are collected, fears are conquered, and ordinary days turn into unforgettable stories.</p>
+                            <p> Where every journey begins with curiosity…and ends with a legend.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- What We Stand For Section -->
+            <div class="section-container" style="margin-bottom:2.5rem;">
+                <div class="about-flex-row reverse">
+                    <div class="about-img-col">
+                        <img src="https://res.cloudinary.com/dwpr0xrjq/image/upload/v1728473466/safaris_sctl4a.jpg" alt="Guide pointing out wildlife to tourists">
+                    </div>
+                    <div class="about-text-col">
+                        <h3 class="section-title">What We Stand For</h3>
+                            <h4>Our Mission</h4>
+                            <p>To provide immersive, safe, and ethically-run adventure experiences that showcase the breathtaking landscapes, vibrant cultures, and incredible wildlife of Kenya. We aim to ignite a spirit of discovery while fostering a deep appreciation for our natural and cultural heritage.</p>
+                            <h4>Our Vision</h4>
+                            <p>To be the most trusted and innovative adventure company in East Africa, known for creating transformative travel experiences that positively impact our guests, our communities, and the environment we operate in.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Our Core Values Section -->
+            <div class="section-container" style="margin-bottom:2.5rem;">
+                <div class="about-flex-row">
+                    <div class="about-img-col">
+                        <img src="https://res.cloudinary.com/dwpr0xrjq/image/upload/v1728473468/picninc_oivlie.jpg" alt="Group watching African sunset">
+                    </div>
+                    <div class="about-text-col">
+                        <h3 class="section-title">Our Core Values</h3>
+                        <ul>
+                            <li><span class="icon"><i class="fas fa-shield-alt"></i></span><span><strong>Safety First</strong><br>Your well-being is our top priority. Our guides are highly trained, our equipment is regularly serviced, and our protocols exceed industry standards.</span></li>
+                            <li><span class="icon"><i class="fas fa-leaf"></i></span><span><strong>Authenticity</strong><br>We take you off the beaten path to discover the real Kenya—from hidden waterfalls to cultural exchanges with local villages.</span></li>
+                            <li><span class="icon"><i class="fas fa-seedling"></i></span><span><strong>Sustainability</strong><br>We are committed to responsible tourism. We practice Leave No Trace principles and ensure local communities benefit from our tours.</span></li>
+                            <li><span class="icon"><i class="fas fa-user-tie"></i></span><span><strong>Expertise</strong><br>Our team consists of knowledgeable, certified guides with years of experience and a passion for sharing their insights.</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            
+            <!-- Meet the Team Section (unchanged, but visually modernized) 
+            <div class="section-container" style="margin-bottom:2rem;">
+                <h3 style="font-family:'Montserrat',sans-serif;font-size:2rem;color:#087139;">Meet Our Team</h3>
+                <p style="font-size:1.1rem;max-width:700px;margin:0 auto 1.5rem;">Our team of experienced adventurers is excited to share their love of nature with you. Get to know the people who make Starkville Adventures unforgettable.</p>
+                <div class="team-section">
+                    -->
+                    <!-- Team Members (same as before) 
+                    <div class="team-member">
+                        <img src="https://res.cloudinary.com/dwpr0xrjq/image/upload_v1753267619/Leslie_Osale_j6phf5.jpg" alt="CEO Image">
+                        <h4>Leslie A.Osale</h4>
+                        <p>Team Leader</p>
+                        <p class="quote">"Leading the way to boundless adventure."</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="https://res.cloudinary.com/dwpr0xrjq/image/upload_v1736143864/beautiful-waterfall-flowers-water-nature-waterfall-hd-wallpaper-ai-generated-free-photo_hamthi.jpg" alt="COO Image">
+                        <h4>Faith N.Wavinya</h4>
+                        <p>Chief Operations Officer</p>
+                        <p class="quote">"Every adventure is a seamless experience under my watch."</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="https://res.cloudinary.com/dwpr0xrjq/image/upload_v1736143864/beautiful-waterfall-flowers-water-nature-waterfall-hd-wallpaper-ai-generated-free-photo_hamthi.jpg" alt="CEO Image">
+                        <h4>Victor Musyoka</h4>
+                        <p>Travel Consultant</p>
+                        <p class="quote">"Designing adventures, one unforgettable trip at a time.."</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="https://res.cloudinary.com/dwpr0xrjq/image/upload_v1736143864/beautiful-waterfall-flowers-water-nature-waterfall-hd-wallpaper-ai-generated-free-photo_hamthi.jpg" alt="CEO Image">
+                        <h4>Elsie Nakhanu</h4>
+                        <p>Marketing</p>
+                        <p class="quote">"Bringing nature’s allure to the world."</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="https://res.cloudinary.com/dwpr0xrjq/image/upload_v1736143864/beautiful-waterfall-flowers-water-nature-waterfall-hd-wallpaper-ai-generated-free-photo_hamthi.jpg" alt="CEO Image">
+                        <h4>Brian Kyalo</h4>
+                        <p>Marketing</p>
+                        <p class="quote">"Sharing the thrill of every adventure."</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="https://res.cloudinary.com/dwpr0xrjq/image/upload_v1736143864/beautiful-waterfall-flowers-water-nature-waterfall-hd-wallpaper-ai-generated-free-photo_hamthi.jpg" alt="CEO Image">
+                        <h4>Christine Mbenya</h4>
+                        <p>Marketing</p>
+                        <p class="quote">"Where stories of the wild come alive."</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="https://res.cloudinary.com/dwpr0xrjq/image/upload_v1736143864/beautiful-waterfall-flowers-water-nature-waterfall-hd-wallpaper-ai-generated-free-photo_hamthi.jpg" alt="CEO Image">
+                        <h4>incoming</h4>
+                        <p>(CSR)</p>
+                        <p class="quote">"Creating connections beyond the trails."</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="https://res.cloudinary.com/dwpr0xrjq/image/upload_v1736143864/beautiful-waterfall-flowers-water-nature-waterfall-hd-wallpaper-ai-generated-free-photo_hamthi.jpg" alt="CEO Image">
+                        <h4>incoming.</h4>
+                        <p>Accountant</p>
+                        <p class="quote">"Keeping our adventures on solid ground."</p>
+                    </div>
+                    -->
+                </div>
+            </div>
+        </div>
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/+254789861332" class="whatsapp-button" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
+    
+    <!-- Footer -->
+<footer>
+    <div class="footer-container">
+        <!-- Useful Links -->
+        <div class="footer-column">
+            <h3>Useful Links</h3>
+            <ul>
+                <li><a href="itinerary.html">Itineraries</a></li>
+                <li><a href="refund.html">Refund Policy</a></li>
+                <li><a href="tnc.html">Terms and Conditions</a></li>
+                <li><a href="login.html">Membership</a></li>
+                <li><a href="faqs.html">FAQ'S</a></li>
+                <li><a href="https://chat.whatsapp.com/J034m55UMaICsRsxAOEfUq">Join our Whatsapp group</a></li>
+                <li><a href="">---</a></li>
+            </ul>
+            <h4>***</h4>
+        </div>
+
+        <!-- Newsletter Subscription -->
+        <div class="footer-column newsletter">
+            <h3>Subscribe to our Newsletter</h3>
+            <form>
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="footer-column contact-info">
+            <h3>Contact Us</h3>
+            <p>Call or SMS: <a href="tel:+254789861332">0789861332</a></p>
+            <p>Location: Nairobi, Kenya</p>
+            <div class="social-icons">
+                <a href="https://web.facebook.com/profile.php?id=61566137716599" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/starkvilleadventures?igsh=YzljYTk1ODg3Zg==" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@starkville.advent?_t=8qwrsPjZTGP&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
+                <a href="mailto:info@starkvilleadventures.co.ke"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-column partnerships">
+        <!--
+        <h3>Partners & Sponsors</h3>
+        <div class="partners-logos">
+            <a href="https://sponsor1.com" target="_blank">
+                <img src="https://res.cloudinary.com/dwpr0xrjq/image/upload_v1736154448/sv_xcjg6h.png" alt="Sponsor 1 Logo">
+                
+            </a>
+            <a href="https://sponsor2.com" target="_blank">
+                <img src="https://res.cloudinary.com/dwpr0xrjq/image/upload_v1736154720/stv_fbaqnk.png" alt="Sponsor 2 Logo">
+            </a>
+            <a href="https://sponsor3.com" target="_blank">
+                <img src="https://res.cloudinary.com/dwpr0xrjq/image/upload_v1736154720/www_gflxhy.png" alt="Sponsor 3 Logo">
+            </a>
+        </div>
+    </div> 
+-->
+        <!-- Copyright Information -->
+        <div class="footer-bottom">
+            <p>&copy; 2025 Starkville Industries. rights reserved</p>
+        </div>
+    </footer>
+    <script>
+        // Hamburger menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuIcon = document.querySelector('.menu-icon');
+            const navMenu = document.querySelector('.nav-menu');
+            if (menuIcon && navMenu) {
+                menuIcon.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

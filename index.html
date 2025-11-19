@@ -35,6 +35,7 @@
     <!-- Preload Critical CSS -->
   <link rel="preload" href="styles.css" as="style">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="style2.css">
     <!-- Add Google Font for Business Name and Disco Clock -->
     <link href="https://fonts.googleapis.com/css2?family=Recoleta&family=Tangerine:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
@@ -132,58 +133,6 @@ h3 {
     display: flex;
     align-items: center;
     gap: 18px;
-}
-
-/* Book Now button */
-/* Book Now button visible only on tablets and larger screens */
-.book-now-btn {
-    display: inline-block;
-    background: linear-gradient(135deg, #FFD700, #155834);
-    color: #262c35;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 1rem;
-    padding: 10px 22px;
-    border-radius: 30px;
-    margin-left: 12px;
-    text-decoration: none;
-    box-shadow: 0 2px 8px rgba(21,88,52,0.10);
-    transition: background 0.3s, color 0.3s, transform 0.2s;
-    white-space: nowrap;
-}
-
-@media screen and (max-width: 768px) {
-    .book-now-btn {
-        display: none !important;
-    }
-}
-
-.book-now-btn:hover {
-    background: linear-gradient(135deg, #155834, #FFD700);
-    color: #fff;
-    transform: scale(1.08);
-}
-
-@media screen and (max-width: 768px) {
-    .book-now-btn {
-        font-size: 0.95rem;
-        padding: 9px 16px;
-        margin-left: 0;
-        margin-top: 8px;
-        width: 100%;
-        text-align: center;
-        border-radius: 24px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .book-now-btn {
-        font-size: 0.85rem;
-        padding: 8px 8px;
-        margin-top: 10px;
-        width: 100%;
-        border-radius: 20px;
-    }
 }
 
 /* Responsive Styling for Smaller Screens */
@@ -777,7 +726,7 @@ h3 {
                     <a href="https://www.tiktok.com/@starkville.advent?_t=8qwrsPjZTGP&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
                     <a href="mailto:info@starkvilleadventures.co.ke"><i class="fas fa-envelope"></i></a>
                 </div>
-                <a href="events.html#booking" class="book-now-btn">Book Now</a>
+                
             </div>
         </div>
     </header>
@@ -797,8 +746,12 @@ h3 {
             <!--<li><a href="membership.html">Membership</a></li>-->
             <li><a href="about.html">About Us</a></li>
             <li><a href="blog.html">Blog</a></li>
-            <li><a href="tnc.html">Terms and Conditions</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
         </ul>
+        <a href="Merch.html" class="book-now-btn">
+  <span class="btn-text">Gear-Up</span>
+  <i class="fas fa-shopping-cart"></i>
+</a>
     </nav>
 
     <!-- Hero Section with Carousel -->
