@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<!-- Meta Tags for Starkville Adventures -->
+    <meta name="description" content="Explore upcoming events and adventures with Starkville Adventures in Kenya. Join us for hikes, camping, team-building activities, and more!">
+    <meta name="keywords" content="Kenya events, hiking events, camping events, team building Kenya, outdoor activities Kenya">
+    
+    <!-- Preload Critical CSS -->
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style2.css">
+    <!-- Add Google Font for Business Name and Styling -->
+    <link href="https://fonts.googleapis.com/css2?family=Recoleta&family=Tangerine:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <!-- Add jsPDF library -->
+<link rel="stylesheet" href="style2.css">
+<title>Starkville Adventures | Contact Us</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: "Poppins", sans-serif;
+        background: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80') no-repeat center/cover;
+        background-attachment: fixed;
+    }
+
+    
+
+    .container {
+        position: relative;
+        z-index: 2;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 580px;
+        padding: 40px 32px;
+        border-radius: 24px;
+        background: linear-gradient(135deg, rgba(255,255,255,0.18) 60%, rgba(8,113,57,0.08) 100%);
+        backdrop-filter: blur(20px) saturate(120%);
+        border: 1.5px solid #087139;
+        box-shadow: 0 8px 40px rgba(8,113,57,0.13);
+        color: #222;
+        text-align: left;
+        box-sizing: border-box;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .card h1 {
+        font-family: 'Tangerine', cursive;
+        font-size: 2.5rem;
+        color: #fbd93f;
+        margin-bottom: 0.5rem;
+        text-align: center;
+        letter-spacing: 1px;
+    }
+    .card p {
+        font-size: 1.15rem;
+        color: #ffffff;
+        margin-bottom: 1.2rem;
+        text-align: center;
+    }
+
+    .logo {
+        width: 120px;
+        max-width: 60vw;
+        height: auto;
+        margin-bottom: 20px;
+    }
+    /* Responsive Styles */
+    @media (max-width: 700px) {
+        .container {
+            padding: 10px;
+        }
+        .card {
+            padding: 20px 10px;
+            max-width: 98vw;
+        }
+        h1 {
+            font-size: 1.5rem;
+        }
+        .logo {
+            width: 90px;
+        }
+        .contact-value {
+            font-size: 1.1rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .container {
+            padding: 4px;
+        }
+        .card {
+            padding: 12px 2vw;
+            border-radius: 12px;
+        }
+        h1 {
+            font-size: 1.1rem;
+        }
+        .logo {
+            width: 70px;
+        }
+        .contact-label {
+            font-size: 0.8rem;
+        }
+        .contact-value {
+            font-size: 0.95rem;
+        }
+    }
+
+    h1 {
+        margin-bottom: 10px;
+        font-size: 2rem;
+        font-weight: 700;
+    }
+
+    p {
+        margin: 8px 0;
+        font-size: 1.1rem;
+    }
+
+    .contact-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 0;
+        border-bottom: 1px solid rgba(8,113,57,0.13);
+        font-size: 1.08rem;
+    }
+
+    .contact-item:last-child {
+        border-bottom: none;
+    }
+
+    .contact-label {
+        font-weight: 600;
+        color: #fbd93f;
+        font-size: 1rem;
+        letter-spacing: 1px;
+        flex: 1;
+    }
+
+    .contact-value {
+        font-weight: 500;
+        color: #2eff23;
+        font-size: 1.08rem;
+        flex: 2;
+        text-align: right;
+    }
+    .contact-value.email {
+        font-size: 0.98rem;
+        font-weight: 500;
+        word-break: break-all;
+        color: #f9f1cb;
+    }
+    .contact-note {
+        font-size: 0.95rem;
+        color: #087139;
+        background: #0c4502;
+        border-radius: 8px;
+        padding: 8px 12px;
+        margin: 18px 0 10px 0;
+        text-align: center;
+        font-style: italic;
+    }
+    .nav-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        margin: 24px 0 10px 0;
+    }
+    .nav-btn {
+        background: #fff;
+        color: #1a237e;
+        border: none;
+        border-radius: 8px;
+        padding: 10px 22px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        transition: background 0.2s, color 0.2s;
+        text-decoration: none;
+        outline: none;
+    }
+    .nav-btn:hover, .nav-btn:focus {
+        background: #1a237e;
+        color: #fff;
+    }
+
+        .contact-button {
+            display: inline-block;
+            background: linear-gradient(90deg, #fbd93f 60%, #087139 100%);
+            color: #1a237e;
+            border: none;
+            border-radius: 12px;
+            padding: 12px 32px;
+            font-size: 1.15rem;
+            font-weight: 700;
+            font-family: 'Montserrat', 'Poppins', sans-serif;
+            box-shadow: 0 4px 16px rgba(8,113,57,0.13);
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+            margin: 18px auto 0 auto;
+            text-align: center;
+        }
+        .contact-button:hover, .contact-button:focus {
+            background: linear-gradient(90deg, #087139 60%, #fbd93f 100%);
+            color: #fff;
+            box-shadow: 0 6px 24px rgba(8,113,57,0.18);
+            outline: none;
+        }
+</style>
+</head>
+<body>
+
+    <!-- Header with Logo, Business Name, and Navigation -->
+    <header>
+        <div class="header-container">
+            <div class="header-left">
+                <img src="https://res.cloudinary.com/dwpr0xrjq/image/upload/v1758725534/LOGO_WHITE_BG_harwpu.png" alt="Starkville Adventures Logo" class="logo">
+                <div class="brand-text">
+                    <h1>Starkville Adventures</h1>
+                    <div class="tagline">ADVENTURE &bull; PRESTIGE &bull; DISCOVERY</div>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="social-icons">
+                    <a href="https://web.facebook.com/profile.php?id=61566137716599" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/starkvilleadventures?igsh=YzljYTk1ODg3Zg==" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@starkville.advent?_t=8qwrsPjZTGP&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    <a href="mailto:info@starkvilleadventures.co.ke"><i class="fas fa-envelope"></i></a>
+                </div>
+                
+
+            </div>
+        </div>
+    </header>
+
+    <!-- Sticky Navbar -->
+    <nav class="navbar">
+        <div class="menu-icon" aria-label="Toggle Menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="events.html">Hikes & Events</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+        <a href="Merch.html" class="book-now-btn">
+  <span class="btn-text">Gear-Up</span>
+  <i class="fas fa-shopping-cart"></i>
+</a>
+    </nav>
+    
+<div class="overlay"></div>
+
+<div class="container">
+    <div class="card">
+        <h1>Contact Centre</h1>
+        <p>Your adventure begins with a message.</p>
+
+        <!-- Phone / WhatsApp -->
+        <div class="contact-item">
+            <div class="contact-label">CALL / WHATSAPP</div>
+            <div class="contact-value">0718 265 014</div>
+        </div>
+
+        <!-- Email -->
+        <div class="contact-item">
+            <div class="contact-label">EMAIL</div>
+            <div class="contact-value email">
+                support@starkvilleadventures.co.ke <br>
+                info@starkvilleadventures.co.ke
+            </div>
+        </div>
+
+        <!-- Operating Hours -->
+        <div class="contact-item">
+            <div class="contact-label">OPERATING HOURS</div>
+            <div class="contact-value">Mon – Sun: 6:00 AM – 10:00 PM</div>
+        </div>
+
+        <!-- Location -->
+        <div class="contact-item">
+            <div class="contact-label">LOCATION</div>
+            <div class="contact-value">Nairobi, Kenya</div>
+        </div>
+
+        <!-- Social Media -->
+        <div class="contact-item">
+            <div class="contact-label">SOCIALS</div>
+            <div class="contact-value">
+                Instagram • TikTok • WhatsApp Channel
+            </div>
+        </div>
+
+        <!-- Emergency Line -->
+        <div class="contact-item">
+            <div class="contact-label">EMERGENCY LINE</div>
+            <div class="contact-value">+254718265014</div>
+        </div>
+
+        <!-- Note -->
+        <p class="contact-note">We respond within 5–15 minutes during operating hours.</p>
+
+        <!-- Call to Action -->
+        <a href="events.html" class="contact-button">Book an Adventure</a>
+    </div>
+</div>
+
+<!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <!-- Useful Links -->
+            <div class="footer-column">
+                <h3>Useful Links</h3>
+                <ul>
+                    <li><a href="itinerary.html">Itineraries</a></li>
+                    <li><a href="refund.html">Refund Policy</a></li>
+                    <li><a href="tnc.html">Terms and Conditions</a></li>
+                    <li><a href="login.html">Membership</a></li>
+                    <li><a href="faqs.html">FAQ'S</a></li>
+                    <li><a href="https://chat.whatsapp.com/J034m55UMaICsRsxAOEfUq">Join our Whatsapp group</a></li>
+                </ul>
+                <h4>***</h4>
+            </div>
+
+            <!-- Newsletter Subscription -->
+            <div class="footer-column newsletter">
+                <h3>Subscribe to our Newsletter</h3>
+                <form>
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="footer-column contact-info">
+                <h3>Contact Us</h3>
+                <p>Call or SMS: <a href="tel:+254718265014">0718265014</a></p>
+                <p>Location: Nairobi, Kenya</p>
+                <div class="social-icons">
+                    <a href="https://web.facebook.com/profile.php?id=61566137716599" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/starkvilleadventures?igsh=YzljYTk1ODg3Zg==" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@starkville.advent?_t=8qwrsPjZTGP&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    <a href="mailto:info@starkvilleadventures.co.ke"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright Information -->
+        <div class="footer-bottom">
+            <p>&copy; 2025 Starkville Industries. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const menuIcon = document.querySelector('.menu-icon');
+    const navMenu = document.querySelector('.nav-menu');
+    menuIcon.addEventListener('click', function() {
+        navMenu.classList.toggle('active');
+        menuIcon.classList.toggle('open');
+    });
+    // Accessibility: close menu on outside click
+    document.addEventListener('click', function(e) {
+        if (!menuIcon.contains(e.target) && !navMenu.contains(e.target)) {
+            navMenu.classList.remove('active');
+            menuIcon.classList.remove('open');
+        }
+    });
+});
+</script>
+</html>
